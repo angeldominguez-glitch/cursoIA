@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Betania+Patmos+In+GDL&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F6F7F9;--surface:#fff;--ink:#101828;--muted:#5B6577;--line:#E2E5EB;--code:#0F1B33;--codeink:#E6EBF5;--a:#12915B;
 --head:"Bricolage Grotesque",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
@@ -17,7 +18,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:900px;margin:0 auto;padding:0 20px}
 header{padding:64px 0 28px}
-header h1{font:700 clamp(2.2rem,6vw,3.6rem)/1.05 var(--head);letter-spacing:-.02em;margin:0 0 14px}
+header h1{font:400 clamp(2.2rem,7vw,3.6rem)/1.05 var(--head);letter-spacing:-.02em;margin:0 0 14px; font-family:"Betania Patmos In GDL", cursive;}
 header p{max-width:60ch;color:var(--muted);margin:0}
 .rules{margin:28px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
 .rules h2{font:700 1.05rem var(--head);margin:0 0 6px}
@@ -56,14 +57,18 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);f
 </head>
 <body>
 <header><div class="wrap">
-<h1>Cuaderno de prompts: IA práctica para docentes de Secundaria y FP</h1>
-<p>De la burocracia al aula. Curso de formación del profesorado (Valladolid).</p>
+<h1>Cuaderno de prompts: IA práctica para docentes de Secundaria y FP. De la burocracia al aula</h1>
+<p>IES Galileo - CFIE Valladolid).</p>
+<figure aria-hidden="true">
+  <img alt="" src="https://i.postimg.cc/Bt9q2r8T/QR.png" width="600" style="text-align:center;">
+  <figcaption style="font-size:30px; font-weight:900; text-align:center; color:#0c2e6c">https://bit.ly/3TI04tl </figcaption>
+</figure>
 <div class="rules">
 <h2>Cómo usar este cuaderno</h2>
 <ol>
 <li>Copia el prompt que necesites con el botón <strong>Copiar</strong>.</li>
 <li>Sustituye el texto entre corchetes <strong>[...]</strong> por los datos de tu materia, módulo o grupo.</li>
-<li><strong>Regla de oro RGPD:</strong> nunca incluyas nombres reales, apellidos ni datos médicos de alumnos en herramientas en la nube. Usa códigos (<code>Alumno_01</code>) o ejecuta el prompt en local con <strong>LM Studio</strong>.</li>
+<li><strong>Regla de oro:</strong> nunca incluyas nombres reales, apellidos ni datos médicos de alumnos en herramientas en la nube. Usa códigos (<code>Alumno_01</code>) o ejecuta el prompt en local con <strong>LM Studio</strong>.</li>
 </ol></div>
 </div></header>
 
@@ -77,14 +82,14 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);f
 <main class="wrap">
 
 <div class="panel" role="tabpanel" id="s1" aria-labelledby="t1" style="--a:#12915B">
-<h2>Domina el chatbot, burocracia exprés y programación</h2>
-<p class="lead">Tokens, explicaciones adaptadas, correos, actas y programaciones didácticas.</p>
+<h2>Domina el chatbot, burocracia exprés y programación de aula</h2>
+<p class="lead">Tokens, explicaciones adaptadas, correos, actas y programaciones didácticas y de aula.</p>
 
 <section class="item"><h3>1.1. Experimento visual: tokenización y eficiencia</h3>
 <p class="obj"><b>Objetivo:</b> comprobar cómo divide la IA las palabras en <i>tokens</i> y por qué limitar la longitud de salida evita cortes en las respuestas.</p>
-<div class="prompt"><div class="ph"><span>Tokenización</span><button class="copy">Copiar</button></div><pre>¿Serías capaz de mostrarme de manera gráfica la 'tokenización' o división en tokens de este prompt? Puedes usar, por ejemplo, diferentes colores de marcado o barras verticales | para separar cada token y decirme cuántos tokens en total tiene esta frase: «El alumno de Formación Profesional debe alcanzar los Resultados de Aprendizaje definidos en el Real Decreto del título». Gracias.</pre></div>
+<div class="prompt"><div class="ph"><span>Tokenización</span><button class="copy">Copiar</button></div><pre>Muéstrame de manera gráfica la 'tokenización' o división en tokens de este prompt. Puedes usar, por ejemplo, diferentes colores de marcado o barras verticales | para separar cada token y decirme cuántos tokens en total tiene.</pre></div>
 <p class="sub">Variante para comprobar la eficiencia de tokens intermedios y de salida</p>
-<div class="prompt"><div class="ph"><span>Eficiencia de tokens</span><button class="copy">Copiar</button></div><pre>Analiza la siguiente afirmación y dame, en inglés, tu opinión brevemente justificada (máximo 3 líneas): «La importancia, por lo tanto, de optimizar el prompt de entrada (en cuanto a limitar al mínimo el volumen generado de tokens totales) es escasa comparativamente. Un prompt extenso, usando lenguaje natural, como este, puede ser muy eficiente, incluso más que si se usaran técnicas de optimización si el usuario no se maneja con soltura con ellas. Lo realmente significativo es limitar la generación de tokens intermedios y de salida. Aquí lo conseguimos pidiendo que la justificación sea breve (menos tokens de salida) y solicitando la respuesta en inglés (menos tokens intermedios y de salida)».</pre></div>
+<div class="prompt"><div class="ph"><span>Eficiencia de tokens</span><button class="copy">Copiar</button></div><pre>Analiza la siguiente afirmación y dame, en inglés, tu opinión brevemente justificada (máximo 150 palabras): «La importancia de optimizar el prompt de entrada (en cuanto a limitar al mínimo el volumen generado de tokens totales) es escasa comparativamente. Un prompt extenso, usando lenguaje natural, como este, puede ser muy eficiente, incluso más que si se usaran técnicas de optimización si el usuario no se maneja con soltura con ellas. Lo realmente significativo es limitar la generación de tokens intermedios y de salida. Aquí lo conseguimos pidiendo que la justificación sea breve (menos tokens de salida) y solicitando la respuesta en inglés (menos tokens intermedios y de salida)».</pre></div>
 </section>
 
 <section class="item"><h3>1.2. Atención a la diversidad y explicación adaptada (DUA)</h3>
@@ -101,8 +106,8 @@ Requisitos de formato:
 <section class="item"><h3>1.3. Burocracia exprés: familias, actas y extraescolares</h3>
 <p class="sub">A) Correo delicado a una familia</p>
 <div class="prompt"><div class="ph"><span>Correo a familia</span><button class="copy">Copiar</button></div><pre>Actúa como tutor de un grupo de [Curso de ESO / Bachillerato / Grado Medio o Superior]. Redacta un correo electrónico formal, empático pero firme, dirigido a la familia de un alumno (usa el marcador [NOMBRE DEL ALUMNO]).
-Contexto de la situación: [Ej: El alumno acumula 5 faltas injustificadas a primera hora y ha bajado su rendimiento en las prácticas de taller / no entrega las tareas en plazo].
-Objetivo del correo: Informar de la situación objetivamente, mostrar disponibilidad para apoyar al alumno y convocar a la familia a una tutoría presencial el próximo [Día y Hora] o solicitar confirmación telefónica.
+Contexto de la situación: [Ej: El alumno acumula 5 faltas injustificadas a primera hora y ha bajado su rendimiento en las prácticas de taller / no entrega las tareas en plazo / ha agredido al profesorado del módulo].
+Objetivo del correo: Informar de la situación objetivamente, mostrar disponibilidad para apoyar al alumno y convocar a la familia a una tutoría presencial el próximo [Día y Hora] y solicitar confirmación telefónica.
 Tono: Institucional, constructivo y preventivo (evita sonar acusatorio).</pre></div>
 <p class="sub">B) Planificación integral de actividad extraescolar</p>
 <div class="prompt"><div class="ph"><span>Actividad extraescolar</span><button class="copy">Copiar</button></div><pre>Actúa como jefe de departamento en un centro educativo de Valladolid. Vamos a organizar una salida extraescolar con alumnos de [Curso/Grupo] para visitar [Lugar o Empresa] el día [Fecha] en horario de [Hora salida] a [Hora regreso].
@@ -111,7 +116,7 @@ Genera en un único documento estructurado:
 2. Checklist logístico para el profesorado organizador.
 3. Carta informativa para las familias con el recorte de autorización inferior listo para imprimir.</pre></div>
 <p class="sub">C) Redacción de acta de departamento a partir de notas sueltas</p>
-<div class="prompt"><div class="ph"><span>Acta de departamento</span><button class="copy">Copiar</button></div><pre>Actúa como secretario del departamento de [Nombre del Departamento / Familia Profesional]. Transforma las siguientes anotaciones rápidas en un acta de reunión formal con lenguaje administrativo educativo, estructurada en: Asistentes, Orden del día, Desarrollo de la sesión y Acuerdos adoptados.
+<div class="prompt"><div class="ph"><span>Acta de departamento</span><button class="copy">Copiar</button></div><pre>Actúa como jefe del departamento de [Nombre del Departamento / Familia Profesional] del IES Galileo de Valladolid. Transforma las siguientes anotaciones rápidas en un acta de reunión formal con lenguaje administrativo educativo, estructurada en: Asistentes, Orden del día, Desarrollo de la sesión y Acuerdos adoptados.
 Notas de la reunión:
 [Pegar aquí el borrador o puntos sueltos hablados en la reunión]</pre></div>
 </section>
@@ -144,8 +149,42 @@ Genera una tabla estructurada con:
 3. Relación de cada actividad con su criterio de evaluación e instrumento de calificación.
 4. Pautas DUA aplicadas (representación, acción/expresión e implicación).</pre></div>
 </section>
+
+<section class="item">
+  <h3>Deberes para la «Sesión 2» del lunes 26 de octubre</h3>
+  <p>Traed en un pendrive o en vuestro Drive / One Drive dos cosas:</p> 
+  <ul><li>Un PDF (apuntes, libro de texto...) que uséis en clase y</li>
+    <li>un libro (en papel) del que queráis digitalizar algo.</li>
+  <p class="sub">¡Buena semana a todos!</p>
+</section>
+
+<section class="item">
+  <h3>Descarga la presentación de la sesión</h3>
+  <p>Podéis descargar la <a href="https://educajcyl-my.sharepoint.com/:p:/g/personal/atdominguez_educa_jcyl_es/IQCTsCCZ2OA9QLOtJ4b6S5hRAbFGxFTeapsQJoIdLl9O2ww">presentación de la sesión</a> generada con Gemini Notebook.</p>
+  <div class="prompt"><div class="ph"><span>Prompt de configuración:</span><button class="copy">Copiar</button></div><pre>
+    Genera una presentación única basada en el guion formativo, adoptando una narrativa y estética "Retro-Futurista / Synthwave" que haga un guiño cultural a los años 80, conectando con la nostalgia del profesorado de entre 30 y 60 años.
+    • Narrativa: Plantea una analogía histórica divertida en la introducción: "Cómo sobrevivimos a la llegada del cassette, del walkman y del primer ordenador en el aula, y por qué la IA es solo el siguiente paso". 
+      El tono debe combinar el rigor formativo con la empatía generacional y un toque de humor sutil.
+    • Diseño Visual: Estética inspirada en el retrowave y los inicios de la informática doméstica (Spectrum, Commodore). 
+      Fondo oscuro con líneas de cuadrícula en perspectiva de neón. Paleta de colores basada en tonos azul oscuro, magenta/fucsia y detalles en cian. 
+      Utiliza tipografías que recuerden a los títulos de películas de ciencia ficción de la época, combinadas con bloques limpios para que no pierda legibilidad pedagógica.
+    • Estructura de Texto: Transforma las secciones del guion en "Niveles" o "Comandos". Los datos densos deben presentarse dentro de cajas que simulen pantallas de ordenadores clásicos o interfaces de píxeles, demostrando que la complejidad tecnológica actual es más intuitiva que la de hace 40 años.
+  </pre></div> 
+  <div class="prompt"><div class="ph"><span>Prompt de solicitud de configuración de la presentación:</span><button class="copy">Copiar</button></div><pre>
+    Tengo que preparar unas diapositivas para una sesión de formación al profesorado de FP, ESO y Bachillerato en el uso de herramientas de IA. 
+    He subido el guion detallado con el desarrollo de la sesion a Gemini notebook. 
+    Quiero que genere una presentación siguiendo una narrativa visual que atraiga la atención del profesorado asistente, que les sirva de ejemplo que podrían usar con sus alumnos, pero que esté alineada (la narrativa) con los intereses de los asistentes (profesorado de entre 30 y 60 años de FP, ESO y Bachillerato). 
+    Plantea tres opciones de configuración de las diapositivas para pegar en Gemini Notebook: 
+      1. una más formal, 
+      2. otra más creativa 
+      3. y una tercera que haga un guiño a la edad de los asistentes usando referencias visuales de los años 80
+  </pre></div> 
+</section>
+
+
 </div>
 
+<!-- 
 <div class="panel" role="tabpanel" id="s2" aria-labelledby="t2" style="--a:#2563EB" hidden>
 <h2>Creación de materiales, OCR, ilustraciones y accesibilidad</h2>
 <p class="lead">Textos escaneados, esquemas con un estilo homogéneo y documentación de imágenes.</p>
@@ -179,7 +218,9 @@ Crea una diapositiva independiente para cada tipo de [Ej: nivel de RAID / sistem
 ¿Cómo puedo citar el uso de esta imagen? Dame un texto alternativo adaptado a la normativa de accesibilidad WCAG / UNE-EN 301549 para materiales educativos, un título formal para la ilustración (Figura N...) y una nota al pie para la autoría (Fuente: ...).</pre></div>
 </section>
 </div>
+-->
 
+<!--
 <div class="panel" role="tabpanel" id="s3" aria-labelledby="t3" style="--a:#E8710A" hidden>
 <h2>Evaluación ágil, simuladores prácticos y rúbricas</h2>
 <p class="lead">Casos prácticos, rúbricas alineadas con los criterios oficiales y corrección con feedback.</p>
@@ -223,7 +264,9 @@ Texto del alumno:
 «[Pegar aquí el texto anonimizado del alumno]»</pre></div>
 </section>
 </div>
+-->
 
+<!--
 <div class="panel" role="tabpanel" id="s4" aria-labelledby="t4" style="--a:#D1344B" hidden>
 <h2>IA local (LM Studio), análisis de notas y ética con alumnos</h2>
 <p class="lead">Análisis estadístico para la junta de evaluación y uso transparente de la IA.</p>
@@ -254,7 +297,7 @@ La ficha debe obligar al alumno a documentar:
 4. Qué errores o imprecisiones detectó en la respuesta inicial de la IA y cómo los verificó y corrigió personalmente con fuentes fiables.</pre></div>
 </section>
 </div>
-
+-->
 </main>
 <footer><div class="wrap">Cuaderno de prompts para el curso de formación del profesorado (Valladolid).</div></footer>
 
