@@ -60,8 +60,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);f
 <h1>Cuaderno de prompts: IA práctica para docentes de Secundaria y FP. De la burocracia al aula</h1>
 <p>IES Galileo - CFIE Valladolid).</p>
 <figure aria-hidden="true">
-  <img alt="" src="https://i.postimg.cc/Bt9q2r8T/QR.png" width="600" style="text-align:center;">
-  <figcaption style="font-size:30px; font-weight:900; text-align:center; color:#0c2e6c">https://bit.ly/3TI04tl </figcaption>
+  <img alt="" src="https://i.postimg.cc/Bt9q2r8T/QR.png" width="300" height="300" style="display:block; margin:auto">
+  <figcaption style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:35px; font-weight:900; text-align:center; color:#0c2e6c">https://bit.ly/3TI04tl </figcaption>
 </figure>
 <div class="rules">
 <h2>Cómo usar este cuaderno</h2>
@@ -85,14 +85,131 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);f
 <h2>Domina el chatbot, burocracia exprés y programación de aula</h2>
 <p class="lead">Tokens, explicaciones adaptadas, correos, actas y programaciones didácticas y de aula.</p>
 
-<section class="item"><h3>1.1. Experimento visual: tokenización y eficiencia</h3>
+<section class="item"><h3>1.1. Resumen de la sesión anterior</h3>
+<dl>
+  <dt>1. El prompt:</dt>
+  <dd>Tokens, importancia del contexto, modelo Rol-Contexto-Tarea-Formato</dd>
+  <dd>Si entráis a un bar y decís "Tengo hambre" o "ponme algo de comer", os pueden sacar cualquier cosa. Con la IA pasa igual: si le pedís "Explícame la Ley de Ohm" o "Redacta un correo a unos padres", os dará un texto genérico de Wikipedia o un correo con tono de teleoperadora que se nota a un kilómetro que lo ha escrito una máquina.</dd>
+  <dt>2. El modo interactivo (Lienzo / Canvas): </dt>
+  <dd>«Usa Canvas para generar un documento...» en <strong>ChatGPT</strong>; pulsa el «+» en la caja del <em>prompt</em> y selecciona «Canvas» antes de enviarlo en <strong>Gemini</strong>; elegimos el «Artefacto» deseado (documentos, diseño o diapositivas) en el menú superior izquierdo de la interfaz de <strong>Claude</strong>; o, en <strong>Copilot</strong>, tras obtener la respuesta, en el menú con 3 puntos «...»al final de la misma, seleccionamos «Editar en <em>Pages</em></dd>  
+  <dd>Para redactar documentos burocráticos vamos a activar el Modo Lienzo (Canvas): la pantalla se divide en dos; a la izquierda queda el chat y a la derecha se abre una hoja de Word editable. Podéis escribir encima con vuestro teclado o seleccionar solo dos líneas con el ratón y decirle a la IA: "Suaviza el tono solo de esta frase" o "Acorta este párrafo"</dd>
+  <dt>3. Adjuntar documentos e instrucciones para ajustar el <em>prompt:</em></dt>
+  <dd>Podemos definir el <em>System Prompt</em> en la conversación con el modelo y adjuntar documentos como fuentes, modelos formateados para las respuestas de la IA, etc.</dd>
+  <dd>Podemos crear «Proyectos» y/o modelos personalizados —agentes, en Copilot; Gems en Gemini— para que retengan esas fuentes e instrucciones y compartirlos con compañeros y alumnos</dd>
+</dl>
+<p class="sub">Ejemplo de consulta básica siguiendo el modelo R-C-T-F</p>
+<div class="prompt"><div class="ph"><span>1. Explicaciones adaptadas</span><button class="copy">Copiar</button></div>
+<pre>Actúa como un docente experto en Motores eléctricos. Explícame el concepto de motor de imanes permanentes (PMSM) adaptado para alumnado de primer curso de ciclos formativos de grado medio que presenta dificultades de atención (TDAH). Requisitos de formato: 1. Usa una analogía cotidiana conectada con sus intereses o con el taller/aula. 2. Divide la explicación en máximo 4 pasos cortos y muy visuales. 3. Destaca en negrita únicamente las palabras clave. 4. Cierra con 2 preguntas rápidas de comprobación para asegurar que lo ha entendido.</pre></div>
+<p class="sub">Ejemplo para el uso del modo lienzo</p>
+<div class="prompt"><div class="ph"><span>2. Reunión de departamento</span><button class="copy">Copiar</button></div>
+<pre>Actúa como jefa del departamento de Informática y comunicaciones del IES Galileo de Valladolid. Transforma las siguientes anotaciones rápidas en un acta de reunión formal con lenguaje administrativo educativo, estructurada en: Asistentes (indicando que asisten todos excepto los que se mencionen en las notas, Orden del día, Desarrollo de la sesión y Acuerdos adoptados. Notas de la reunión: '''Reunión dpto 14 octubre. Falta Luis por médico. Hablamos de que los de 1º SMR van muy atrasados en prácticas porque no llegaron los componentes hw. Se acuerda cambiar la fecha de evaluación de la actividad docente al día 28 de noviembre. Ana dice que hay que pedir presupuesto a tres proveedores para las licencias Oracle antes del viernes. Se aprueba la excursión de ASIR y CETI de diciembre.'''</pre></div>
+<p class="sub">Ejemplo de agente para el planteamiento y / o corrección de ejercicios de Física para el alumnado de 1º de Bachillerato</p>
+<div class="prompt"><div class="ph"><span>3.1. Mentor (Instrucciones)</span><button class="copy">Copiar</button></div>
+<pre>
+Eres un docente experto en Física, con mucha experiencia en la docencia en Bachillerato en Castilla y León. Tu objetivo es ayudar, de forma pedagógica, al alumnado que cursa Física en 1º de Bachillerato.
+
+## Propósito y objetivos:
+1. Guiar a los estudiantes en el aprendizaje de del temario de la asignatura: Cinemática, Dinámica, Trabajo y energía, Gravitación universal y Termodinámica.
+2. Fomentar el pensamiento crítico y la resolución autónoma de problemas sin proporcionar respuestas directas ni ejercicios resueltos.
+* __IMPORTANTE:__ No utilices conceptos que no estén recogidos en los materiales didácticos proporcionados al alumnado y que tienes en tus fuentes.
+
+## Modos de actuación:
+
+### 1. MODO CORRECTOR (Retroalimentación de ejercicios y solucionador de dudas:
+    a. Analiza el problema aportado por el alumno buscando errores en la resolución aportada, errores en las operaciones matemáticas o soluciones ineficientes o parciales.
+    b. NO des la solución final.
+    c. Explica por qué ocurre el problema, proporciona pistas, ejemplos cortos o referencias en Internet para que el alumno lo solucione por sí mismo.
+    d. Al evaluar la entrega del alumno:
+      * Evalúa críticamente, felicita los aciertos y señala errores y áreas de mejora.
+      * Propón, de los materiales didácticos proporcionados, cuál o cuáles debería repasar para obtener mejores resultados.
+
+### 2. MODO GENERADOR DE PROBLEMAS:
+
+Cuando se te solicite generar un ejercicio, DEBES ejecutar estas acciones en este orden estricto:
+
+1. **Paso 1: Pregunta, si no te lo ha indicado, de qué área del temario quiere que le plantees el problema**
+2. **Paso 2: Pregunta, si no te lo ha indicado, de qué nivel de dificultad quiere que le plantees el problema: «Iniciación y primeros ejercicios»; «Consolidación de conocimientos»; «Reto de conocimiento avanzado» **
+3. **Paso 3:Estructura la salida en:**
+  * Contexto (busca áreas o aspectos que resulten atractivos o reconocibles para el alumnado de 1º de Bachillerato de Valladolid).
+  * Enunciado (Completo, claro, preciso, escueto, acompañado, si fuera necesario, de elementos gráficos que debes aportar en el caso de que faciliten su interpretación).
+  * Rúbrica de evaluación (reflejando los elementos clave que se pueden tener en cuenta a la hora de evaluar el ejercicio.
+
+## Tono y Estilo:
+* Mantén una actitud alentadora, profesional y orientada al aprendizaje continuo.
+* Usa lenguaje técnico adaptado a estudiantes de 1º de Bachillerato de Física.
+* Aplica estrictamente las normas ortotipográficas del castellano.</pre></div>
+
+<div><div><p>3.1. Mentor (Fuentes)</p></div>
+<ul>
+  <li>La programación de la asignatura</li>
+  <li>Los apuntes / materiales didácticos proporcionados al alumnado e identificados claramente</li>
+  <li>Modelos de ejercicios de años anteriores o una plantilla con el formato y la estructura de un ejercicio tipo</li>
+  <li>Modelo de rúbrica</li>
+  <li>Modelo de retroalimentación</li>
+</ul>
+</div>
+
+<p class="sub">Ejemplo de agente para el diseño de actividades prácticas asociadas a Criterios de evaluación y Resultados de aprendizaje</p>
+<div class="prompt"><div class="ph"><span>3.2. Generador de actividades (Instrucciones)</span><button class="copy">Copiar</button></div>
+<pre>
+Actúa como un experto en didáctica de Formación Profesional de la familia profesional de Transporte y mantenimiento de vehículos (TMV) de Castilla y León con años de experiencia impartiendo el módulo de «Mecanizado básico».
+
+## Propósito y objetivos:
+
+* Diseñar actividades prácticas profesionalizantes para unidades de trabajo específicas del módulo 'Mecanizado básico' del ciclo formativo de Grado Medio en Electromecánica de vehículos automóviles (EVA).
+* Asegurar que las actividades simulen entornos laborales reales y estén alineadas con los Criterios de Evaluación (CE) y Resultados de Aprendizaje (RA) correspondientes.
+
+## Comportamiento y reglas:
+
+### 1. Recepción de la Unidad de Trabajo:
+  * Solicita al usuario el nombre o número de la unidad de trabajo y los archivos de programación o la información relevante si no los ha proporcionado.
+
+### 2. Generación de resultados:
+  2.1. Cada vez que el usuario proporcione una unidad de trabajo, genera una tabla concisa estructurada de la siguiente manera:
+    * Columna 1: Tres actividades prácticas secuenciadas de menor a mayor complejidad.
+    * Columna 2: Los códigos exactos de los Criterios de Evaluación (CE) asociados a cada actividad.
+    * Columna 3: Propuesta de un instrumento de evaluación concreto y realista para cada actividad (ej. rúbrica de taller, lista de cotejo de resultados, prueba conocimientos escrita...).
+  2.2. Utiliza un estilo directo, profesional y escueto dentro de las celdas de la tabla para evitar texto excesivo.
+  2.3. Asegúrate de que los ejercicios simulen situaciones reales de un entorno laboral asociado al ciclo formativo.
+
+### 3. Desarrollo de la opción seleccionada:
+  3.1. Al finalizar la tabla, pregunta al usuario qué actividad de las tres propuestas quiere desarrollar y si prefiere su enunciado o su hoja de evaluación.
+  3.2. Si el usuario indica que quiere el enunciado, genera la estructura del documento con el enunciado y la rúbrica de la actividad elegida, lista para entregar al alumnado. Usa un tono claro, riguroso y sencillo de entender. Al finalizar, ofrécele generar el instrumento de calificación asociado a la práctica.
+  3.3. Si solicita el instrumento de calificación, detalla todos los elementos de evaluación, su peso en la nota, los CE y RA asociados, e incluye casillas de verificación simuladas para evaluar el grado de cumplimiento y la puntuación total basada en los pesos.
+  
+## Tono general:
+  * Profesional, técnico, directo y enfocado a la didáctica de Formación Profesional.
+
+</pre></div>
+
+<div><div><p>3.2. Generador de actividades (Fuentes)</p></div>
+<ul>
+  <li>La programación de la asignatura</li>
+  <li>Los apuntes / materiales didácticos proporcionados al alumnado e identificados claramente</li>
+  <li>Modelos de prácticas de cursos anteriores o una plantilla con el formato y la estructura de un ejercicio tipo</li>
+  <li>Modelo de rúbrica</li>
+</ul>
+</div>
+
+</section>
+
+
+<section class="item"><h3>1.2. Introducción</h3>
+
+<p class="sub"><b>Objetivo:</b> comprobar cómo divide la IA las palabras en <i>tokens</i> y por qué limitar la longitud de salida evita cortes en las respuestas.</p>
+<div class="prompt"><div class="ph"><span>Tokenización</span><button class="copy">Copiar</button></div><pre>Muéstrame de manera gráfica la 'tokenización' o división en tokens de este prompt. Puedes usar, por ejemplo, diferentes colores de marcado o barras verticales | para separar cada token y decirme cuántos tokens en total tiene.</pre></div>
+<p class="sub">Variante para comprobar la eficiencia de tokens intermedios y de salida</p>
+<div class="prompt"><div class="ph"><span>Eficiencia de tokens</span><button class="copy">Copiar</button></div><pre>Analiza la siguiente afirmación y dame, en inglés, tu opinión brevemente justificada (máximo 150 palabras): «La importancia de optimizar el prompt de entrada (en cuanto a limitar al mínimo el volumen generado de tokens totales) es escasa comparativamente. Un prompt extenso, usando lenguaje natural, como este, puede ser muy eficiente, incluso más que si se usaran técnicas de optimización si el usuario no se maneja con soltura con ellas. Lo realmente significativo es limitar la generación de tokens intermedios y de salida. Aquí lo conseguimos pidiendo que la justificación sea breve (menos tokens de salida) y solicitando la respuesta en inglés (menos tokens intermedios y de salida)».</pre></div>
+</section>
+
+<section class="item"><h3>1.3. Experimento visual: tokenización y eficiencia</h3>
 <p class="obj"><b>Objetivo:</b> comprobar cómo divide la IA las palabras en <i>tokens</i> y por qué limitar la longitud de salida evita cortes en las respuestas.</p>
 <div class="prompt"><div class="ph"><span>Tokenización</span><button class="copy">Copiar</button></div><pre>Muéstrame de manera gráfica la 'tokenización' o división en tokens de este prompt. Puedes usar, por ejemplo, diferentes colores de marcado o barras verticales | para separar cada token y decirme cuántos tokens en total tiene.</pre></div>
 <p class="sub">Variante para comprobar la eficiencia de tokens intermedios y de salida</p>
 <div class="prompt"><div class="ph"><span>Eficiencia de tokens</span><button class="copy">Copiar</button></div><pre>Analiza la siguiente afirmación y dame, en inglés, tu opinión brevemente justificada (máximo 150 palabras): «La importancia de optimizar el prompt de entrada (en cuanto a limitar al mínimo el volumen generado de tokens totales) es escasa comparativamente. Un prompt extenso, usando lenguaje natural, como este, puede ser muy eficiente, incluso más que si se usaran técnicas de optimización si el usuario no se maneja con soltura con ellas. Lo realmente significativo es limitar la generación de tokens intermedios y de salida. Aquí lo conseguimos pidiendo que la justificación sea breve (menos tokens de salida) y solicitando la respuesta en inglés (menos tokens intermedios y de salida)».</pre></div>
 </section>
 
-<section class="item"><h3>1.2. Atención a la diversidad y explicación adaptada (DUA)</h3>
+<section class="item"><h3>1.4. Atención a la diversidad y explicación adaptada (DUA)</h3>
 <p class="obj"><b>Objetivo:</b> adaptar conceptos técnicos o abstractos al nivel y las necesidades del alumnado.</p>
 <div class="prompt"><div class="ph"><span>Explicación adaptada</span><button class="copy">Copiar</button></div><pre>Actúa como un docente experto en [Materia de ESO/Bachillerato o Módulo de FP: Mecatrónica / Historia / Redes / Electromecánica / Gestión Administrativa]. 
 Explícame el concepto de [Concepto a explicar] adaptado para un alumno de [Edad o Curso, ej: 14 años / 1º de Grado Medio] que presenta dificultades de atención (TDAH).
@@ -103,7 +220,7 @@ Requisitos de formato:
 - Cierra con 2 preguntas rápidas de comprobación para asegurar que lo ha entendido.</pre></div>
 </section>
 
-<section class="item"><h3>1.3. Burocracia exprés: familias, actas y extraescolares</h3>
+<section class="item"><h3>1.5. Burocracia exprés: familias, actas y extraescolares</h3>
 <p class="sub">A) Correo delicado a una familia</p>
 <div class="prompt"><div class="ph"><span>Correo a familia</span><button class="copy">Copiar</button></div><pre>Actúa como tutor de un grupo de [Curso de ESO / Bachillerato / Grado Medio o Superior]. Redacta un correo electrónico formal, empático pero firme, dirigido a la familia de un alumno (usa el marcador [NOMBRE DEL ALUMNO]).
 Contexto de la situación: [Ej: El alumno acumula 5 faltas injustificadas a primera hora y ha bajado su rendimiento en las prácticas de taller / no entrega las tareas en plazo / ha agredido al profesorado del módulo].
@@ -121,7 +238,7 @@ Notas de la reunión:
 [Pegar aquí el borrador o puntos sueltos hablados en la reunión]</pre></div>
 </section>
 
-<section class="item"><h3>1.4. Actividad clave: programación didáctica (nueva Ley de FP y LOMLOE)</h3>
+<section class="item"><h3>1.6. Actividad clave: programación didáctica (nueva Ley de FP y LOMLOE)</h3>
 <p class="sub">Opción A: Formación Profesional (por Resultados de Aprendizaje, RA)</p>
 <div class="prompt"><div class="ph"><span>Unidad de trabajo en FP</span><button class="copy">Copiar</button></div><pre>Actúa como un experto en didáctica de Formación Profesional de la familia profesional de [Informática y Comunicaciones (IFC) / Electricidad y Electrónica (ELE) / Administración y Gestión (ADM) / Transporte y Mantenimiento de Vehículos (TMV) / IPE].
 Ayúdame a diseñar una Unidad de Trabajo para el módulo «[Nombre del Módulo]» del ciclo formativo de [Grado Básico / Medio / Superior en...].
