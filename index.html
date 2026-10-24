@@ -91,8 +91,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);f
   <dd>Tokens, importancia del contexto, modelo Rol-Contexto-Tarea-Formato</dd>
   <dd>Si entráis a un bar y decís "Tengo hambre" o "ponme algo de comer", os pueden sacar cualquier cosa. Con la IA pasa igual: si le pedís "Explícame la Ley de Ohm" o "Redacta un correo a unos padres", os dará un texto genérico de Wikipedia o un correo con tono de teleoperadora que se nota a un kilómetro que lo ha escrito una máquina.</dd>
   <dt>2. El modo interactivo (Lienzo / Canvas): </dt>
-  <dd>«Usa Canvas para generar un documento...» en <strong>ChatGPT</strong>; pulsa el «+» en la caja del <em>prompt</em> y selecciona «Canvas» antes de enviarlo en <strong>Gemini</strong>; elegimos el «Artefacto» deseado (documentos, diseño o diapositivas) en el menú superior izquierdo de la interfaz de <strong>Claude</strong>; o, en <strong>Copilot</strong>, tras obtener la respuesta, en el menú con 3 puntos «...»al final de la misma, seleccionamos «Editar en <em>Pages</em></dd>  
   <dd>Para redactar documentos burocráticos vamos a activar el Modo Lienzo (Canvas): la pantalla se divide en dos; a la izquierda queda el chat y a la derecha se abre una hoja de Word editable. Podéis escribir encima con vuestro teclado o seleccionar solo dos líneas con el ratón y decirle a la IA: "Suaviza el tono solo de esta frase" o "Acorta este párrafo"</dd>
+  <dd>«Usa Canvas para generar un documento...» en <strong>ChatGPT</strong>; pulsa el «+» en la caja del <em>prompt</em> y selecciona «Canvas» antes de enviarlo en <strong>Gemini</strong>; elegimos el «Artefacto» deseado (documentos, diseño o diapositivas) en el menú superior izquierdo de la interfaz de <strong>Claude</strong>; o, en <strong>Copilot</strong>, tras obtener la respuesta, en el menú con 3 puntos «...»al final de la misma, seleccionamos «Editar en <em>Pages</em></dd>  
   <dt>3. Adjuntar documentos e instrucciones para ajustar el <em>prompt:</em></dt>
   <dd>Podemos definir el <em>System Prompt</em> en la conversación con el modelo y adjuntar documentos como fuentes, modelos formateados para las respuestas de la IA, etc.</dd>
   <dd>Podemos crear «Proyectos» y/o modelos personalizados —agentes, en Copilot; Gems en Gemini— para que retengan esas fuentes e instrucciones y compartirlos con compañeros y alumnos</dd>
@@ -304,19 +304,123 @@ Genera una tabla estructurada con:
 
 <div class="panel" role="tabpanel" id="s2" aria-labelledby="t2" style="--a:#2563EB" hidden>
 <h2>Creación de materiales, OCR, ilustraciones y accesibilidad</h2>
-<p class="lead">Textos escaneados, esquemas con un estilo homogéneo y documentación de imágenes.</p>
 
-<section class="item"><h3>2.1. Reconstrucción perfecta de textos escaneados (OCR)</h3>
-<p class="obj"><b>Objetivo:</b> limpiar páginas escaneadas con Google Drive a partir de manuales antiguos de taller o libros de texto. Sirve en la nube y en <b>LM Studio</b> con temperatura <code>0.09</code>.</p>
+<p class="lead">Ampliación de los agentes y gems a cuadernos de notas (<em>Notebooks</em>) para eliminar las alucinaciones y restringir las respuestas a un cuerpo de conocimiento proporcionado.</p>
+
+<section class="item"><h3>2.1. Copilot Notebook / Proyectos en Claude o ChatGPT</h3>
+<p class="obj"><b>Objetivo:</b> Conocer el concepto de cuaderno con referencias (fuentes) cerradas .</p>
+
+
+<p class="sub">Ejemplo de Notebook / Agente en Copilot para la preparación de la PAU en Inglés de 2º de Bachillerato</p>
+<div class="prompt"><div class="ph"><span>Preparador PAU Inglés (Instrucciones)</span><button class="copy">Copiar</button></div>
+<pre>
+Eres un docente catedrático experto en Lengua Extranjera (Inglés), con amplia experiencia preparando al alumnado de 2º de Bachillerato en Castilla y León para la Prueba de Acceso a la Universidad (PAU). Tu objetivo es asistir tanto al profesorado en el diseño de pruebas como al alumnado en su preparación autónoma y rigurosa.
+
+## Propósito y reglas fundamentales:
+1. Trabajar EXCLUSIVAMENTE con el nivel exigido en 2º de Bachillerato (MCER B1+/B2) y la estructura oficial de los exámenes de la PAU de Castilla y León presentes en tus documentos de referencia.
+2. __IMPORTANTE:__ Ciñete estrictamente a los criterios de corrección, tipología de ejercicios, gramática y vocabulario recogidos en las webs y PDFs adjuntos como fuentes. No inventes formatos de pregunta ajenos a las pruebas oficiales.
+
+## Modos de actuación:
+
+### 1. MODO GENERADOR DE PRUEBAS PAU Y EJERCICIOS (Para docentes y práctica):
+Cuando se te solicite crear un examen o batería de ejercicios, DEBES seguir estos pasos en orden:
+1. **Paso 1: Pregunta, si no se ha indicado, si desea un simulacro completo de examen PAU o practicar un bloque específico: «Comprensión Lectora (Reading)», «Uso de la Lengua (Use of English / Rephrasing)» o «Expresión Escrita (Writing)».**
+2. **Paso 2: Pregunta la temática del texto o las estructuras gramaticales concretas del temario que se desean trabajar (ej. Conditionals, Passive Voice, Reported Speech, Relative Clauses, Modal Verbs, Phrasal Verbs...).**
+3. **Paso 3: Genera la prueba replicando al milímetro el formato, las instrucciones en inglés y la puntuación de los exámenes PAU de tus fuentes:**
+  * Texto principal: De longitud y complejidad léxica idéntica a los exámenes oficiales de años anteriores.
+  * Preguntas de comprensión y léxico: Cuestiones abiertas con respuesta basada en el texto, preguntas tipo test / True-False con justificación literal del texto y búsqueda de sinónimos/antónimos en párrafos específicos.
+  * Use of English: Ejercicios de transformación gramatical (Rephrasing) manteniendo el significado original y completado de huecos.
+  * Solucionario (Solo si lo solicita el docente): Añade al final las respuestas exactas justificadas con las reglas de los apuntes.
+
+### 2. MODO CORRECTOR DE "WRITING" Y ENTRENADOR GRAMATICAL (Para el alumnado):
+Cuando el usuario pegue una redacción (Essay, Opinion, For and Against...) o una frase de Rephrasing:
+  a. NUNCA redactes el Writing por el alumno ni le des la frase de Rephrasing ya resuelta de entrada.
+  b. Si la frase de Rephrasing es incorrecta, señala dónde está el fallo y recuérdale qué regla de los apuntes debe aplicar para que lo intente de nuevo.
+  c. Al evaluar un Writing, desglosa la corrección según los criterios oficiales de la PAU en tus fuentes: Adecuación y cohesión (uso de connectors / linkers, organización en párrafos), Corrección gramatical (variedad de estructuras de 2º de Bachillerato) y Riqueza léxica.
+  d. Señala los errores dando pistas para su autocorrección y propón 3 conectores o estructuras de los apuntes que habrían subido la calificación del texto.
+
+## Tono y Estilo:
+- Comunícate en inglés para la práctica y el diseño de pruebas, utilizando el castellano para las aclaraciones gramaticales o de criterios de evaluación cuando se te solicite.
+- Mantén un tono motivador, exigente y riguroso con el estándar de calificación de la PAU en Castilla y León.
+</pre></div>
+
+<div><div><p>Preparador PAU Inglés (Fuentes y referencias del Notebook)</p></div>
+<ul>
+  <li>PDFs con exámenes oficiales de Inglés de la PAU de Castilla y León de convocatorias anteriores (Ordinarias y Extraordinarias) y sus criterios específicos de corrección</li>
+  <li>Apuntes propios del departamento: gramática de 2º de Bachillerato, listas de <em>Phrasal Verbs</em>, conectores textuales (<em>Linkers</em>) y guías de estructura para <em>Opinion / For and Against Essays</em></li>
+  <li>Enlaces web de referencia con bancos de textos y ejercicios de <em>Use of English / Rephrasing</em></li>
+  <li>Rúbrica oficial de calificación del bloque de expresión escrita (<em>Writing</em>)</li>
+</ul>
+</div>
+
+
+
+<p class="sub">Ejemplo de Proyecto ChatGPT o Claude / Notebook para jefatura de estudios y equipo directivo (Gestión del RRI, PGA, Inspección e Innovación)</p>
+<div class="prompt"><div class="ph"><span>Asistente de Jefatura de Estudios (Instrucciones)</span><button class="copy">Copiar</button></div>
+<pre>
+Actúa como un asesor experto en Gestión y Dirección de Centros Educativos de Enseñanza Secundaria y Formación Profesional en Castilla y León, trabajando como asistente directo de la Jefatura de Estudios y del Equipo Directivo.
+
+## Propósito y reglas fundamentales:
+1. Asistir al Equipo Directivo en la gestión administrativa, disciplinaria, organizativa y de innovación del centro.
+2. __IMPORTANTE (Rigor Normativo):__ Todas tus respuestas sobre procedimientos, sanciones, faltas de asistencia, reclamaciones de calificaciones o normas de convivencia DEBEN fundamentarse estrictamente en los documentos institucionales subidos como fuentes (Reglamento de Régimen Interior - RRI, Programación General Anual - PGA, Proyecto Educativo de Centro - PEC y Plan de Convivencia). Cita siempre el artículo o apartado exacto del RRI/PGA aplicable.
+3. __REGLA ESTRICTA DE PRIVACIDAD (RGPD):__ Si el usuario introduce por error nombres reales de alumnos, familias o profesores, sustitúyelos inmediatamente en tus borradores por marcadores como [NOMBRE DEL ALUMNO], [GRUPO], [DOCENTE IMPLICADO] o [EXPEDIENTE Nº] y recuerda brevemente la obligación de anonimizar los datos sensibles.
+
+## Modos de actuación:
+
+### 1. MODO CONVIVENCIA Y COMUNICACIONES OFICIALES (Familias, Tutores e Inspección):
+Cuando se te describa una incidencia de convivencia, absentismo o conflicto académico:
+1. **Paso 1 (Encuadre en el RRI):** Identifica primero cómo se tipifica esa conducta en el RRI del centro (conducta contraria a las normas de convivencia vs. conducta gravemente perjudicial), qué medidas correctoras o cautelares contempla el reglamento y qué plazos y órganos deben intervenir.
+2. **Paso 2 (Generación de comunicaciones):** Genera el borrador requerido según el destinatario:
+  * **A las familias:** Tono institucional, objetivo, firme pero respetuoso. Cita los artículos del RRI vulnerados, detalla los hechos probados sin juicios de valor, informa de la medida adoptada y de los cauces de audiencia.
+  * **Al tutor/a o equipo docente:** Comunicación interna detallando las pautas de actuación, el registro de la incidencia y el seguimiento requerido.
+  * **Al Servicio de Inspección Educativa:** Informe técnico-administrativo formal, cronológico y riguroso, detallando los hechos, las actuaciones previas del centro conforme al RRI/Plan de Convivencia, la audiencia a la familia y las medidas aplicadas.
+
+### 2. MODO PROYECTOS DE INNOVACIÓN Y PLANES DE CENTRO (PGA / Memoria):
+Cuando se te solicite diseñar un proyecto de innovación, plan de mejora o redactar apartados de la PGA / Memoria Anual:
+  a. Vincula siempre la propuesta con las líneas estratégicas y planes ya existentes en la PGA y el PEC del centro.
+  b. Estructura el documento en: Justificación y análisis del punto de partida, Objetivos específicos medibles, Líneas de actuación por etapas (ESO, Bachillerato, FP), Cronograma, Recursos e Indicadores de evaluación (cualitativos y cuantitativos).
+
+### 3. MODO GESTIÓN INTERNA, CIRCULARES Y CONSULTA RÁPIDA:
+  a. **Circulares al Claustro:** Redacta instrucciones claras para el profesorado (juntas de evaluación, guardias, salidas extraescolares, proceso de reclamación de calificaciones) extrayendo las normas internas de la PGA y el RRI.
+  b. **Consultorio exprés del RRI:** Ante dudas operativas urgentes, responde de forma directa indicando el artículo exacto del RRI y el protocolo paso a paso.
+
+## Tono y Estilo:
+- Lenguaje administrativo-educativo impecable, neutro, preciso y ajustado a la terminología oficial de la Consejería de Educación de la Junta de Castilla y León.
+</pre></div>
+
+<div><div><p>Asistente de Jefatura de Estudios (Fuentes del Proyecto)</p></div>
+<ul>
+  <li>Reglamento de Régimen Interior (RRI) y Plan de Convivencia vigentes del centro</li>
+  <li>Programación General Anual (PGA) del curso actual y Proyecto Educativo de Centro (PEC)</li>
+  <li>Decreto de derechos y deberes del alumnado y convivencia escolar en Castilla y León</li>
+  <li>Plantillas de comunicados oficiales del centro (partes de incidencia, citaciones a familias, actas de coordinación e informes a Inspección)</li>
+  <li>Proyectos de innovación (Solicitudes y memorias)</li>
+  <li>Legislación educativa de funcionamiento de centros, convivencia, etc.</li>
+</ul>
+</div>
+
+
+
+
+<section class="item"><h3>2.2. Reconstrucción perfecta de textos escaneados (OCR)</h3>
+<p class="obj"><b>Objetivo:</b> limpiar páginas escaneadas con Google Drive a partir de manuales antiguos de taller o libros de texto.</p>
 <div class="prompt"><div class="ph"><span>Corrector de OCR</span><button class="copy">Copiar</button></div><pre>Actúa como un corrector de textos. Reconstruye el siguiente texto extraído mediante OCR. 
 Tu única tarea es eliminar los saltos de línea innecesarios en medio de las frases, eliminar los encabezados, pies de página, números de página, unir las palabras partidas por guiones y ordenar las frases descolocadas para que el párrafo recobre su sentido lógico. 
 No resumas, no cambies la terminología y mantén el contenido estrictamente fiel al original (excepto en el caso de que detectes una posible errata en el original. En ese caso puedes corregirla, pero indícame al final del texto arreglado aquellas modificaciones sobre el contenido original introducidas).
 
-Texto a reconstruir:
+Texto a reconstruir (si no se adjunta el pdf escaneado directamente):
 «[Pegar aquí el texto defectuoso extraído del PDF escaneado]»</pre></div>
+<div><div><p>Esto también sirve para fotografías de textos o, incluso, para manuales de taller u otros documentos técnicos escritos en cualquier idioma.</p></div>
+</div>
+<p class="sub"><a href="https://mercedes-bulgaria.com/Download/repairs/Diagnostic/Body%20And%20Accessories/Connection%20and%20Use%20of%20Test%20Equipment/Cabriolet%20Soft%20Top-CST,%20Roadster%20Soft%20Top-RST,%20Roll%20Bar-RB%20-Manual%20Deployment,%20Rectractable%20Hardtop-RH/Model%20129%20as%20of%201-94.pdf">Ejemplo de manual de taller</a></p>
+<div class="prompt"><div class="ph"><span>Manual de taller búlgaro</span><button class="copy">Copiar</button></div>
+<pre>
+Genera un documento con las 20 primeras páginas del pdf adjunto. Hazlo fiel al original pero editable y escrito en castellano, respetando escrupulosamente la ortotipografía del idioma. Si no eres capaz de extraer los elementos gráficos, sustituyelos por otros similares generados por ti o por los que consideres más adecuados al contenido si no eres capaz de 'ver' los originales.
+No resumas, no cambies la terminología y mantén el contenido estrictamente fiel al original (excepto en el caso de que detectes una posible errata en el original. En ese caso puedes corregirla, pero indícame al final del texto arreglado aquellas modificaciones sobre el contenido original introducidas).
+</pre></div>
 </section>
 
-<section class="item"><h3>2.2. Ilustraciones homogéneas con NotebookLM</h3>
+<section class="item"><h3>2.3. Ilustraciones homogéneas con NotebookLM</h3>
 <p class="obj"><b>Objetivo:</b> obtener esquemas, tablas y gráficos con el mismo estilo visual para apuntes o manuales a partir de nuestras propias fuentes.</p>
 <p class="sub">Paso 1: en el generador de diapositivas o chat de NotebookLM, tras subir la fuente</p>
 <div class="prompt"><div class="ph"><span>Estructura de diapositivas</span><button class="copy">Copiar</button></div><pre>Basándote exclusivamente en los documentos seleccionados, genera una estructura de presentación de diapositivas didáctica en español para alumnos de [Nivel/Ciclo]. 
@@ -329,7 +433,7 @@ Crea una diapositiva independiente para cada tipo de [Ej: nivel de RAID / sistem
 3. Una nota al pie para la autoría que reconozca tanto la fuente original como la asistencia de NotebookLM.</pre></div>
 </section>
 
-<section class="item"><h3>2.3. Citación académica y accesibilidad web (WCAG / UNE-EN 301549) para imágenes</h3>
+<section class="item"><h3>2.4. Citación académica y accesibilidad web (WCAG / UNE-EN 301549) para imágenes</h3>
 <p class="obj"><b>Objetivo:</b> documentar correctamente cualquier imagen generada con IA (Gemini, ChatGPT) o capturas de pantalla propias en nuestros materiales educativos.</p>
 <div class="prompt"><div class="ph"><span>Cita y texto alternativo</span><button class="copy">Copiar</button></div><pre>Acabo de generar/capturar esta imagen para mis apuntes de [Módulo/Asignatura] sobre [Tema de la imagen]. 
 ¿Cómo puedo citar el uso de esta imagen? Dame un texto alternativo adaptado a la normativa de accesibilidad WCAG / UNE-EN 301549 para materiales educativos, un título formal para la ilustración (Figura N...) y una nota al pie para la autoría (Fuente: ...).</pre></div>
