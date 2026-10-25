@@ -303,7 +303,7 @@ Genera una tabla estructurada con:
 
 
 <div class="panel" role="tabpanel" id="s2" aria-labelledby="t2" style="--a:#2563EB" hidden>
-<h2>Creación de materiales, OCR, ilustraciones y accesibilidad</h2>
+<h2>Creación de materiales, OCR, blocs de notas</h2>
 
 <p class="lead">Ampliación de los agentes y gems a cuadernos de notas (<em>Notebooks</em>) para eliminar las alucinaciones y restringir las respuestas a un cuerpo de conocimiento proporcionado.</p>
 
@@ -398,7 +398,53 @@ Cuando se te solicite diseñar un proyecto de innovación, plan de mejora o reda
   <li>Legislación educativa de funcionamiento de centros, convivencia, etc.</li>
 </ul>
 </div>
+<p class="sub">Ejemplo de Notebook en Copilot para generar la Programación de Aula sesión a sesión (Módulo IPE I - Familia Electricidad y Electrónica)</p>
+<div class="prompt"><div class="ph"><span>Programador de Aula IPE I - ELE (Instrucciones)</span><button class="copy">Copiar</button></div>
+<pre>
+Eres un docente especialista en Formación y Orientación Laboral (FOL), con amplia experiencia impartiendo el módulo transversal de «Itinerario Personal para la Empleabilidad I (IPE I)» en ciclos formativos de la familia profesional de Electricidad y Electrónica (ELE) en Castilla y León bajo la nueva Ley de Formación Profesional.
 
+## Propósito y reglas fundamentales:
+1. Diseñar la programación de aula detallada, secuenciada por sesiones reales y alineada estrictamente con los Resultados de Aprendizaje (RA) y Criterios de Evaluación (CE) de la programación didáctica adjunta.
+2. __IMPORTANTE (Fidelidad a las fuentes):__ Utiliza EXCLUSIVAMENTE el calendario escolar de Castilla y León, el horario semanal del profesor, la programación didáctica y los apuntes de clase proporcionados en las fuentes. No inventes fechas, criterios de evaluación ni contenidos ajenos a los documentos del cuaderno.
+3. __CONTEXTUALIZACIÓN SECTORIAL (ELE):__ Aunque el currículo de IPE I sea común, TODAS las actividades prácticas, supuestos de Prevención de Riesgos Laborales (PRL), análisis del sector productivo y casos laborales DEBEN contextualizarse en el ámbito de la Electricidad, Electrónica, Automatismos y Telecomunicaciones (riesgo eléctrico, 5 reglas de oro, EPIs dieléctricos, Convenio Siderometalúrgico de Valladolid, etc.).
+
+## Flujo de trabajo obligatorio (Ejecución paso a paso):
+
+Cuando el usuario te solicite desarrollar la programación de aula de una Unidad de Trabajo (UT) o de una Evaluación/Trimestre, sigue este orden estricto:
+
+### PASO 1: Auditoría de calendario y sesiones reales
+1. Consulta el «Calendario escolar de Castilla y León» y el «Horario del profesor» en tus fuentes para el periodo o trimestre solicitado.
+2. Calcula e indica al usuario el número exacto de horas/sesiones lectivas reales disponibles para el módulo de IPE I en ese periodo, detallando qué días concretos se descuentan por ser festivos autonómicos/locales, vacaciones o jornadas de evaluación.
+3. Verifica que el número de sesiones coincide con la temporalización prevista en la «Programación Didáctica».
+
+### PASO 2: Tabla de secuenciación sesión a sesión (Programación de Aula)
+Genera una tabla concisa y estructurada con las siguientes columnas para la Unidad de Trabajo solicitada:
+  * **Columna 1 (Sesión y Fecha):** Número de sesión (ej. S1, S2...) y fecha exacta según el horario del profesor y el calendario escolar.
+  * **Columna 2 (Saberes / Contenidos):** Apartado exacto de los «Apuntes de clase» que se trabaja en esa sesión.
+  * **Columna 3 (Metodología y Actividad de Aula/Taller):** Dinámica concreta basada en los «Libros de didáctica de FP» de tus fuentes (aprendizaje basado en retos, simulación de accidentes eléctricos, rol-playing de conflictos laborales, taller de primeros auxilios/PAS, análisis del plan de autoprotección del taller eléctrico).
+  * **Columna 4 (Trazabilidad Curricular):** Códigos exactos del Resultado de Aprendizaje (RA) y Criterios de Evaluación (CE) asociados (ej. RA2 - CE a, c) e instrumento de evaluación si procede en esa sesión.
+
+*(Nota de formato: Usa un estilo directo, técnico y telegráfico dentro de las celdas para evitar que la tabla se corte por límite de longitud).*
+
+### PASO 3: Desarrollo de actividades e instrumentos (A petición)
+Al terminar la tabla de la Unidad de Trabajo, detente y pregunta al docente:
+1. Si desea ajustar alguna fecha por imprevistos del departamento (ej. salidas extraescolares o periodo de formación en empresa).
+2. Qué sesión o actividad práctica de la tabla desea desarrollar al completo (incluyendo enunciado del supuesto práctico adaptado al sector eléctrico, ficha para el alumno y rúbrica o lista de cotejo alineada con los CE).
+
+## Tono y Estilo:
+- Riguroso, pedagógico, práctico y adaptado a la normativa vigente de FP en Castilla y León.
+</pre></div>
+
+<div><div><p>Programador de Aula IPE I - ELE (Fuentes del Cuaderno)</p></div>
+<ul>
+  <li>Programación Didáctica del módulo de IPE I (con desglose de Unidades de Trabajo, RA, CE y ponderaciones)</li>
+  <li>Apuntes de clase elaborados por el docente</li>
+  <li>Calendario escolar oficial de Castilla y León (con festivos locales de Valladolid) y horario semanal del profesor</li>
+  <li>Dos manuales / libros de referencia sobre Didáctica y Metodologías Activas en Formación Profesional</li>
+  <li>Guía técnica de prevención de Riesgo Eléctrico (INSST) y Convenio Colectivo Siderometalúrgico de Valladolid</li>
+</ul>
+</div>
+</section>
 
 
 
@@ -418,26 +464,114 @@ Texto a reconstruir (si no se adjunta el pdf escaneado directamente):
 Genera un documento con las 20 primeras páginas del pdf adjunto. Hazlo fiel al original pero editable y escrito en castellano, respetando escrupulosamente la ortotipografía del idioma. Si no eres capaz de extraer los elementos gráficos, sustituyelos por otros similares generados por ti o por los que consideres más adecuados al contenido si no eres capaz de 'ver' los originales.
 No resumas, no cambies la terminología y mantén el contenido estrictamente fiel al original (excepto en el caso de que detectes una posible errata en el original. En ese caso puedes corregirla, pero indícame al final del texto arreglado aquellas modificaciones sobre el contenido original introducidas).
 </pre></div>
+
 </section>
 
-<section class="item"><h3>2.3. Ilustraciones homogéneas con NotebookLM</h3>
-<p class="obj"><b>Objetivo:</b> obtener esquemas, tablas y gráficos con el mismo estilo visual para apuntes o manuales a partir de nuestras propias fuentes.</p>
-<p class="sub">Paso 1: en el generador de diapositivas o chat de NotebookLM, tras subir la fuente</p>
-<div class="prompt"><div class="ph"><span>Estructura de diapositivas</span><button class="copy">Copiar</button></div><pre>Basándote exclusivamente en los documentos seleccionados, genera una estructura de presentación de diapositivas didáctica en español para alumnos de [Nivel/Ciclo]. 
-Crea una diapositiva independiente para cada tipo de [Ej: nivel de RAID / sistema de inyección / tipo de contrato laboral / configuración eléctrica / etapa histórica], manteniendo exactamente la misma estructura visual: definición técnica, esquema comparativo de ventajas/inconvenientes y caso de uso real.</pre></div>
-<p class="sub">Paso 2: en el chat de NotebookLM, para catalogar y citar la diapositiva como ilustración</p>
-<div class="prompt"><div class="ph"><span>Cita de la ilustración</span><button class="copy">Copiar</button></div><pre>Voy a usar la diapositiva número [X] que has generado en mis apuntes de clase para distribuir entre el alumnado (la que contiene [describir brevemente el esquema o tabla]). 
-¿Cómo puedo citar rigurosamente el uso de esa imagen basándote en la fuente original subida al cuaderno? Dame:
-1. Un título formal para la ilustración (Formato: Figura N. ...).
-2. Un texto alternativo descriptivo adaptado a normativa de accesibilidad.
-3. Una nota al pie para la autoría que reconozca tanto la fuente original como la asistencia de NotebookLM.</pre></div>
+<section class="item"><h3>2.3. Ecosistema NotebookLM (Gemini Notebook): De las fuentes al material de aula e ilustraciones homogéneas</h3>
+<p class="obj"><b>Objetivo:</b> Dominar las herramientas del panel <em>Studio</em> de NotebookLM para generar recursos didácticos sin alucinaciones, estructurar presentaciones a partir de mapas mentales y obtener ilustraciones con estilo visual idéntico.</p>
+
+<dl>
+  <dt>1. Gestión avanzada de fuentes y trazabilidad:</dt>
+  <dd>Permite combinar PDFs, documentos y presentaciones de Google Drive, páginas web, vídeos de YouTube (extrayendo su transcripción automáticamente) y archivos de audio MP3. Activando o desactivando las casillas (<code>☑</code>) del panel izquierdo decidimos sobre qué documentos exactos trabaja la IA en cada momento.</dd>
+  <dd>Cada respuesta incluye citas numeradas auditables que abren el fragmento exacto del documento original, eliminando el riesgo de invención normativa o técnica.</dd>
+
+  <dt>2. Aplicaciones prácticas del panel <em>Studio</em> por especialidades (Profesorado y Alumnado):</dt>
+  <dd><strong>Mapa Mental interactivo (Biología y Geología, Física y Química, Historia):</strong> Genera esquemas jerárquicos desplegables y descargables en imagen PNG para proyectar en el aula. Al pulsar sobre cualquier nodo, lanza una consulta al chat para desglosar ese apartado.</dd>
+  <dd><strong>Resumen de Audio y Modo Interactivo de voz (Inglés y Educación Física):</strong> Crea <em>podcasts</em> conversacionales personalizando el idioma, el nivel (ej. B1/B2 para <em>Listening</em> en Bachillerato) o el foco del contenido (ej. resumen de reglamentos deportivos o normas de una salida al medio natural para escuchar antes de la práctica). El alumnado puede pulsar «Unirse» para conversar por voz con los locutores y resolver dudas.</dd>
+  <dd><strong>Cuestionarios, Tarjetas didácticas (<em>Flashcards</em>) e Informes (TMV, ELE, ADM, FOL/IPE):</strong> Creación automática de tests interactivos con botón de explicación anclado a los apuntes, tarjetas de memorización técnica (simbología eléctrica, aparamenta, asientos contables) y extracción de tablas de diagnóstico de averías a partir de manuales de taller.</dd>
+  <dd><strong>Consultoría normativa y documental (Orientación Educativa y Equipo Directivo):</strong> Cruce de normativas autonómicas de atención a la diversidad para extraer pautas DUA (sin incluir nunca datos personales de alumnos) o contraste entre la PGA y las actas de departamento para redactar la Memoria Final de Curso.</dd>
+  <dd><strong>Cuadernos compartidos para el estudio del alumnado:</strong> Mediante la opción <em>Compartir &rarr; Solo acceso al chat</em>, el docente proporciona a sus estudiantes un entorno de estudio seguro para preparar exámenes o el Proyecto Intermodular utilizando exclusivamente la nomenclatura y los métodos explicados en clase.</dd>
+</dl>
+
+<p class="sub">Flujo de trabajo: Del mapa mental al generador de diapositivas</p>
+<div><div><p>Idea de caso de uso: Generar imágenes sueltas para nuestros materiales docentes con IA suele provocar estilos dispares, textos deformados y agotamiento de tokens. Para conseguir ilustraciones, tablas y esquemas con un aspecto visual 100% homogéneo para nuestros apuntes, podemos usar las presentaciones de diapositivas en NotebookLM:</p></div>
+<ol>
+  <li>Generamos el <strong>mapa mental</strong> en el panel <em>Studio</em> y lo desplegamos como deseemos estructurar la presentación.</li>
+  <li>Adjuntamos la imagen del mapa descargada al chat y le pedimos un índice estructurado de los apartados del mapa que hemos adjuntado</li>
+  <li>Pulsamos en <strong>«Guardar en una nota»</strong> sobre la respuesta del esquema y, desde el panel derecho, seleccionamos <strong>«Convertir en fuente»</strong> (ya que las herramientas del <em>Studio</em> leen de las fuentes seleccionadas a la izquierda).</li>
+  <li>Renombramos a la nueva fuente como «Guion diapositivas»</li>
+  <li>Abrimos el generador de <strong>Presentación de diapositivas</strong> en el <em>Studio</em>, ajustamos el idioma y estilo e introducimos el siguiente prompt de estructuración:</li>
+</ol>
+</div>
+
+<div class="prompt"><div class="ph"><span>Ilustraciones homogéneas mediante diapositivas (NotebookLM)</span><button class="copy">Copiar</button></div>
+<pre>Basándote en el "Guion diapositivas" que tienes en las fuentes, genera una presentación de diapositivas didáctica en español para alumnado de [Nivel / Ciclo Formativo / Curso]. 
+Crea una diapositiva independiente para cada elemento del "Guion diapositivas", manteniendo exactamente la misma estructura visual en todas ellas</pre></div>
+<p class="sub">Recurso adicional: <a href="https://github.com/serenakeyitan/awesome-notebookLM-prompts" target="_blank" rel="noopener">Repositorio de prompts y estilos para presentaciones en NotebookLM</a></p>
 </section>
 
-<section class="item"><h3>2.4. Citación académica y accesibilidad web (WCAG / UNE-EN 301549) para imágenes</h3>
-<p class="obj"><b>Objetivo:</b> documentar correctamente cualquier imagen generada con IA (Gemini, ChatGPT) o capturas de pantalla propias en nuestros materiales educativos.</p>
-<div class="prompt"><div class="ph"><span>Cita y texto alternativo</span><button class="copy">Copiar</button></div><pre>Acabo de generar/capturar esta imagen para mis apuntes de [Módulo/Asignatura] sobre [Tema de la imagen]. 
-¿Cómo puedo citar el uso de esta imagen? Dame un texto alternativo adaptado a la normativa de accesibilidad WCAG / UNE-EN 301549 para materiales educativos, un título formal para la ilustración (Figura N...) y una nota al pie para la autoría (Fuente: ...).</pre></div>
+
+<section class="item"><h3>2.4. Seguridad, propiedad intelectual y uso honesto de la tecnología</h3>
+<p class="obj"><b>Objetivo:</b> Garantizar la confidencialidad de los datos en el centro educativo, respetar los derechos de autor de los materiales de referencia y dar ejemplo de honestidad académica citando el uso de la IA.</p>
+
+<dl>
+  <dt>1. Seguridad y privacidad de la información (RGPD):</dt>
+  <dd>El uso de cuentas institucionales (como Microsoft Copilot con cuenta <code>@educa.jcyl.es</code> o entornos Google Workspace for Education) ofrece protección de datos empresariales (los archivos no se emplean para entrenar modelos públicos).</dd>
+  <dd><strong>Línea roja innegociable:</strong> Jamás deben subirse a cuadernos o chats en la nube listados con nombres y apellidos de alumnos, DNI, calificaciones identificables, informes psicopedagógicos o expedientes disciplinarios. Asimismo, antes de compartir un cuaderno con el alumnado, debemos verificar que no contiene fuentes privadas del departamento ni borradores de exámenes.</dd>
+
+  <dt>2. Derechos de autor y honestidad docente:</dt>
+  <dd>Subir obras de referencia o manuales técnicos a un cuaderno privado para nuestro análisis o preparación docente es lícito, pero no debemos redistribuir fragmentos protegidos como si fueran de elaboración propia sin citar la fuente original.</dd>
+  <dd>Si exigimos transparencia al alumnado en sus entregas, debemos predicar con el ejemplo incluyendo una nota de autoría rigurosa en las figuras, tablas o diapositivas generadas con asistencia de la IA a partir de fuentes de terceros.</dd>
+</dl>
+
+<p class="sub">Prompt para generar el pie de figura y la cita de autoría (Fuente original + Asistencia de IA)</p>
+<div class="prompt"><div class="ph"><span>Citación rigurosa y uso honesto de ilustraciones</span><button class="copy">Copiar</button></div>
+<pre>Voy a usar la diapositiva número [X] que has generado en mis apuntes de clase para distribuir entre el alumnado (la que contiene [describir brevemente la tabla o esquema, ej: la tabla con los niveles RAID]). 
+Para hacer un uso honesto de la tecnología y respetar los derechos de autor de las fuentes subidas al cuaderno, ¿cómo puedo citar rigurosamente el uso de esa imagen? Dame:
+1. Un título formal para el pie de la ilustración (Formato: Figura N. ...).
+2. Una nota al pie para la autoría (Fuente: ...) que reconozca tanto al autor y documento original en el que te has basado como la asistencia de NotebookLM.
+</pre></div>
+
+<div><div><p>Ejemplo de resultado obtenido para incluir al pie de nuestras ilustraciones en los apuntes:</p></div>
+<ul>
+  <li><strong>Título:</strong> Figura 3. Tabla comparativa de niveles RAID (0, 1, 5, 6 y 10).</li>
+  <li><strong>Fuente:</strong> Elaboración propia con la asistencia de NotebookLM de Google, basada en el artículo «RAID level 0, 1, 5, 6 and 10 | Advantage, disadvantage, use» de Laurens Leurs (2023) (Prepressure.com).</li>
+</ul>
+<p>(Opcional: Si después necesitas catalogar el resto, basta con indicar: «Haz lo mismo para la diapositiva Y»)</p>
+</div>
 </section>
+
+
+<section class="item"><h3>2.5. Generación rápida de formularios con Copilot + Microsoft Forms (EducaCyL)</h3>
+<p class="obj"><b>Objetivo:</b> Aprovechar la integración de las cuentas corporativas <code>@educa.jcyl.es</code> para transformar un prompt en un formulario o test interactivo en Microsoft Forms en menos de dos minutos (aplicado a la evaluación del ecuador del curso).</p>
+
+<div><div><p>Procedimiento rápido en 3 pasos:</p></div>
+<ol>
+  <li>Generamos las preguntas con <strong>Microsoft Copilot</strong> utilizando el prompt inferior para obtener una estructura limpia.</li>
+  <li>Seleccionamos <strong>«Editar en <em>Pages</em></strong> para abrir el modo lienzo y terminar de ajustar las preguntas.</li>
+  <li>Guardamos como PDF o DOCX el documento generado.</li>
+  <li>Abrimos <strong>Microsoft Forms</strong> desde nuestra cuenta de EducaCyL y pulsamos en <strong>«Importar rápidamente»</strong> (desde documento Word/PDF) o utilizamos el asistente integrado.</li>
+  <li>Ajustamos y compartimos el cuestionario mediante enlace o código QR.</li>
+</ol>
+</div>
+
+<p class="sub">Prompt utilizado para generar el formulario de valoración intermedia del curso</p>
+<div class="prompt"><div class="ph"><span>Generador de cuestionario para Microsoft Forms</span><button class="copy">Copiar</button></div>
+<pre>Actúa como coordinador de formación del profesorado. Diseña un cuestionario breve de 6 preguntas para evaluar el ecuador de nuestro curso «IA Práctica para docentes de secundaria y FP» (hemos trabajado: Prompting, Modo Lienzo, Agentes/Proyectos, reconstrucción OCR y NotebookLM; quedan por ver: Evaluación/Rúbricas e IA Local/Alumnado).
+Estructura el cuestionario con formato limpio listo para importar en Microsoft Forms:
+1. Tres preguntas de valoración (escala de 1 a 5) sobre la utilidad práctica de los contenidos vistos para su labor docente, el ritmo de las sesiones de 14:00 a 16:00 h y la claridad de los ejemplos aplicados a su especialidad.
+2. Una pregunta de opción múltiple (con opciones A, B, C, D) sobre qué herramienta o flujo de trabajo de las dos primeras sesiones le ha resultado más útil.
+3. Dos preguntas abiertas de respuesta corta para que indiquen qué tarea concreta de su asignatura, módulo o cargo desean resolver en las Sesiones 3 y 4, y posibles sugerencias de mejora.
+Presenta únicamente las preguntas numeradas y sus opciones, sin texto introductorio ni explicaciones adicionales.</pre></div>
+<iframe width="640px" height="480px" src="https://forms.cloud.microsoft/e/dKPyjyJwiy?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+</section>
+
+
+<section class="item">
+  <h3>Descarga la presentación de la sesión</h3>
+  <p>Podéis descargar la <a href="https://educajcyl-my.sharepoint.com/:p:/g/personal/atdominguez_educa_jcyl_es/IQCmphYrPkccTYuYOMmvgY7yAQyBXQOVufsm-1kZOu0DwCQ">presentación de la sesión</a> generada con Gemini Notebook.</p>
+  <div class="prompt"><div class="ph"><span>Prompt de configuración:</span><button class="copy">Copiar</button></div><pre>
+    Genera una presentación con un diseño moderno de estilo editorial y periódico de vanguardia. 
+    La paleta de colores debe ser minimalista: fondo blanco roto o marfil suave, texto en negro azabache y acentos sutiles en gris oscuro. 
+    Utiliza una tipografía Serif clásica y sofisticada (como Playfair Display o Georgia) para los grandes titulares estilo cabecera de prensa, y una tipografía Sans-Serif geométrica (como Helvetica o Inter) para los subtítulos y el cuerpo de texto. 
+    Estructura el diseño en base a cuadrículas asimétricas de 2 o 3 columnas, imitando la maquetación de una revista de diseño o prensa de lujo. 
+    Usa cajas de texto justificadas, líneas divisorias muy finas para separar las secciones y grandes espacios en blanco. 
+    Añade marcadores para fotografías en blanco y negro de alto contraste. 
+    El tono visual debe ser sumamente elegante, limpio, corporativo y sofisticado, evitando cualquier elemento retro o aspecto de periódico viejo amarillento.
+  </pre></div> 
+  
+</section>
+
 </div>
 
 
