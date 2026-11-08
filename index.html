@@ -576,48 +576,236 @@ El tono visual debe ser sumamente elegante, limpio, corporativo y sofisticado, *
 
 
 
-<div class="panel" role="tabpanel" id="s3" aria-labelledby="t3" style="--a:#E8710A" hidden>
-<h2>Evaluación ágil, simuladores prácticos y rúbricas</h2>
-<p class="lead">Casos prácticos, rúbricas alineadas con los criterios oficiales y corrección con feedback.</p>
+<div class="panel" role="tabpanel" id="s3" aria-labelledby="t3" style="--a:#EA580C" hidden>
+<h2>Ética docente, Gamificación (CTFs y Escape Rooms), Simuladores interactivos y Bancos de preguntas</h2>
 
-<section class="item"><h3>3.1. Simuladores de casos prácticos y bancos de preguntas</h3>
-<p class="obj"><b>Objetivo:</b> crear supuestos prácticos profesionalizantes o preguntas tipo test con retroalimentación automática.</p>
-<div class="prompt"><div class="ph"><span>Caso práctico</span><button class="copy">Copiar</button></div><pre>Actúa como un especialista técnico del sector de [Informática / Automoción / Electricidad / Administración / Materia ESO-Bach].
-Diseña un caso práctico realista basado en una situación de trabajo real para evaluar el tema «[Tema o Resultado de Aprendizaje]»:
-1. Plantea el escenario inicial (ej. la queja de un cliente que entra al taller/oficina, una incidencia crítica en un servidor o un fallo en un cuadro eléctrico con síntomas concretos).
-2. Incluye datos técnicos verosímiles (con algún dato distractor para que el alumno tenga que discriminar qué es relevante).
-3. Formula 3 preguntas escalonadas de diagnóstico y resolución para el alumno.
-4. Añade al final (en una sección separada para el profesor) la pauta de corrección con la solución técnica exacta y los errores más comunes que suele cometer el alumnado.</pre></div>
+<p class="lead">Independencia tecnológica mediante el «Paquete Universal de Fuentes», revisión experta y citación ética de materiales, diseño de retos gamificados y simuladores interactivos (<em>Canvas / Artifacts</em>), y generación automatizada de bancos de evaluación importables.</p>
+
+<section class="item"><h3>3.1. Resultados de la encuesta intermedia y «El Paquete Universal de Fuentes»</h3>
+<p class="obj"><b>Objetivo:</b> Analizar el seguimiento del curso y estructurar una carpeta local universal que permita migrar en segundos entre cualquier plataforma de IA (Copilot, Gemini, ChatGPT, Claude, Perplexity o LM Studio) sin depender de un proveedor concreto.</p>
+
+<p class="sub"><a href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=7iKSZuXVOUWYfqMBWrbfMRJhXdXfBzBDku6pWCRACBpUMFdGTTlRSFI4Rkg4VTE1RkUzV0VGS0RTUS4u&analysis=true" target="_blank" rel="noopener">Acceso a los resultados en vivo de la encuesta de seguimiento (Microsoft Forms)</a></p>
+
+<dl>
+  <dt>Estructura de la carpeta base <code>00_Cerebro_IA_[NombreAsignatura]</code>:</dt>
+  <dd><strong>1. <code>01_Instrucciones_Sistema.md</code> (o <code>.txt</code>):</strong> Archivo de texto con el <em>System Prompt Multimodo</em> (rol, reglas globales y modos de actuación).</dd>
+  <dd><strong>2. <code>02_Normativa_y_Programacion.pdf</code>:</strong> Recorte del BOE/BOCYL con los Resultados de Aprendizaje (RA) o Saberes Básicos y la programación didáctica.</dd>
+  <dd><strong>3. <code>03_Apuntes_Limpios_por_Temas/</code>:</strong> Contenidos didácticos propios en formatos abiertos o estándar (PDF, Markdown, Word).</dd>
+  <dd><strong>4. <code>04_Modelos_de_Muestra.pdf</code>:</strong> Plantillas de exámenes, prácticas tipo y modelos de rúbrica del departamento.</dd>
+</dl>
+
+<p class="sub">Documento maestro con System Prompt Multimodo y disparadores rápidos (guardar como archivo <code>.md</code>)</p>
+<div class="prompt"><div class="ph"><span>Documento Maestro de Instrucciones del Módulo / Asignatura</span><button class="copy">Copiar</button></div>
+<pre># DOCUMENTO MAESTRO DE INSTRUCCIONES DEL MÓDULO
+*(Copia el Bloque 1 en las "Instrucciones del Sistema" de tu Proyecto en ChatGPT/Claude/Perplexity, Agente de Copilot o Gem de Gemini. Usa los disparadores del Bloque 2 al abrir un chat nuevo).*
+---
+## BLOQUE 1: SYSTEM PROMPT MULTIMODO (Pegar en la configuración del Proyecto)
+Actúa como docente especialista de [Etapa educativa / Familia Profesional, ej.: Formación Profesional de la familia de Informática y Comunicaciones (IFC)] en Castilla y León, titular del módulo/asignatura «[Nombre del Módulo o Asignatura, ej.: Sistemas Informáticos (1º CFGS DAM/DAW)]».
+
+### Reglas globales innegociables:
+1. **Fidelidad documental:** Basa todas tus respuestas en los archivos de las carpetas `Normativa` (Real Decreto/BOCYL y programación), `Contenidos didácticos` (apuntes del profesor) y `Modelos` (plantillas de exámenes, prácticas y rúbricas). No inventes criterios de evaluación ni contenidos que no correspondan al nivel del curso.
+2. **Privacidad (RGPD):** Si en algún momento detectas nombres reales de alumnos, sustitúyelos automáticamente por `[ALUMNO_XX]`.
+3. **Economía de tokens:** Sé directo, técnico y evita introducciones o despedidas superfluas. En las tablas, emplea un estilo telegráfico para evitar cortes.
+4. **Español:** Usa el idioma español respetando sus normas ortotipográficas, especialmente en lo relativo al uso de mayúscula inicial solo en la primera palabra de los títulos, la cursiva para términos escritos en otros idiomas y las comillas angulares « y » en vez de las anglosajonas "".
+
+### Modos de actuación (Activa únicamente el modo que te solicite el usuario al iniciar el chat):
+* **MODO 1 [/materiales] - Elaboración de apuntes y recursos didácticos:**
+  - Desarrolla o adapta los contenidos de la unidad indicada siguiendo la estructura y el rigor técnico de los archivos de `Contenidos didácticos`.
+  - Incluye ejemplos prácticos aplicados a [entorno de taller / laboratorio / aula], tablas resumen comparativas y analogías claras para conceptos abstractos. Hazlo basándote en las características generales del alumnado de [Curso y perfil de edad en Valladolid y provincia].
+* **MODO 2 [/practica] - Generación de retos prácticos, laboratorios y rúbricas:**
+  - Diseña supuestos prácticos profesionalizantes (o retos tipo CTF) alineados con los Resultados de Aprendizaje (RA) y Criterios de Evaluación (CE) de la Programación didáctica del módulo.
+  - Usa una temática que resulte cercana y atractiva al alumnado, pero que les acerque a la realidad profesional. Puedes emplear nombres de empresas representativas del sector en Castilla y León.
+  - Respeta siempre la estructura visual de la plantilla de prácticas de la carpeta `Modelos` (Objetivo, Entorno/Requisitos, Secuencia de tareas, Entregables y Rúbrica analítica con evidencias observables).
+* **MODO 3 [/examen] - Generación de pruebas de evaluación y bancos de preguntas:**
+  - Crea pruebas escritas (casos prácticos de diagnóstico/resolución) o bancos de preguntas tipo test.
+  - Si se solicita test para Moodle/Aula Virtual, entrégalo en formato **GIFT** con retroalimentación breve. Si es para Microsoft Forms, entrégalo en formato **docx** simulando Aiken (Preguntas numeradas, opciones `A, B, C, D` + `ANSWER: X`).
+  - Añade siempre el solucionario justificado para el docente tras la propuesta. 
+* **MODO 4 [/burocracia] - Programación didáctica, de aula y memorias:**
+  - Cruza los RA y CE de la `Normativa` con el calendario escolar y el horario para secuenciar sesiones en tabla, o redacta el análisis de consecución de objetivos para las actas de evaluación y la Memoria Final de Curso siguiendo los formatos de `Modelos`.
+---
+## BLOQUE 2: DISPARADORES RÁPIDOS (Para copiar al iniciar un "Nuevo Chat")
+* **Para crear apuntes:**
+  &gt; «/materiales para la Unidad [X]. Redacta el apartado sobre [Tema] basándote en el tono y nivel de detalle del resto de materiales didácticos. Incluye un glosario y 2 ejercicios resueltos paso a paso o prácticas guiadas.»
+* **Para crear una práctica con su rúbrica:**
+  &gt; «/practica Para trabajar el [RA X - Criterios a, b, c], diseña un laboratorio práctico sobre [Tema] siguiendo nuestra plantilla de modelo y añade su rúbrica de calificación.»
+* **Para generar un examen o banco Moodle/Forms:**
+  &gt; «/examen Sobre el archivo de apuntes de la Unidad [X]. Genera 10 preguntas de aplicación práctica en formato [GIFT / Aiken] listas para importar.»
+* **Para programar o redactar memoria:**
+  &gt; «/burocracia Genera la tabla de programación de aula por sesiones para la Unidad [X] descontando los festivos del calendario adjunto.»</pre></div>
+
+<p class="sub">Ejemplo de ejecución en vivo: <a href="https://www.perplexity.ai/computer/tasks/2a695f73-12d8-4b7e-8e04-2cdd97badefb?view=thread" target="_blank" rel="noopener">Ver hilo de prueba en Proyectos de Perplexity</a></p>
 </section>
 
-<section class="item"><h3>3.2. Generador de rúbricas analíticas alineadas con criterios oficiales</h3>
-<div class="prompt"><div class="ph"><span>Rúbrica analítica</span><button class="copy">Copiar</button></div><pre>Actúa como un experto en evaluación educativa (LOMLOE / Nueva Ley de FP). 
-Crea una rúbrica analítica en formato tabla para evaluar la siguiente tarea o proyecto: «[Describir la práctica, tarea o Proyecto Intermodular]».
-Los criterios de evaluación oficiales que debo calificar son:
-«[Pegar criterios de evaluación]»
 
-Requisitos de la tabla:
-- Filas: Desglosa los criterios en 4 indicadores observables y medibles. Asigna el peso porcentual a cada fila.
-- Columnas: 4 niveles de desempeño: Excelente (9-10), Notable (7-8), Suficiente (5-6) e Insuficiente (1-4).
-- Redacta cada celda describiendo qué evidencia concreta debe mostrar el trabajo del alumno, evitando adjetivos vagos como "bueno", "adecuado" o "regular".</pre></div>
+<section class="item"><h3>3.2. Caso práctico multimedia (Carrocería / TMV) y Ética Docente: Revisión experta y citación</h3>
+<p class="obj"><b>Objetivo:</b> Combinar apuntes y vídeos técnicos de YouTube en NotebookLM para generar tablas y presentaciones visuales, aplicando un flujo riguroso de auditoría técnica (<em>Human-in-the-loop</em>) y citación honesta de la IA.</p>
+
+<div><div><p><strong>Cuaderno de demostración en Gemini Notebook:</strong> <a href="https://notebook.google.com/notebook/dc58ead4-b159-4ab0-9882-67849348b383" target="_blank" rel="noopener">Preparación de superficies: Tipos de masillas en Carrocería</a></p>
+<p>Fuentes empleadas en el cuaderno:</p></div>
+<ul>
+  <li>Vídeos de procedimientos de taller en YouTube: <a href="https://www.youtube.com/watch?v=frhcMNd3zcQ" target="_blank" rel="noopener">Vídeo 1 (Aplicación y lijado)</a> | <a href="https://www.youtube.com/watch?v=XT3vjV-rnh0" target="_blank" rel="noopener">Vídeo 2 (Técnicas de reparación)</a></li>
+  <li>Artículos y fichas técnicas del sector: <a href="https://entaban.es/blog/que-tipo-de-masillas-existen-para-la-reparacion-de-metales-y-plasticos/" target="_blank" rel="noopener">Entaban</a> | <a href="https://www.anicla.com/noticias/ver/masilla-para-coche-tipos-y-aplicaciones35" target="_blank" rel="noopener">Anicla</a> | <a href="https://www.bernardoecenarro.com/es/besa-lab/masilla-para-coche-tipos-y-caracteristicas/" target="_blank" rel="noopener">BESA Lab (Bernardo Ecenarro)</a></li>
+</ul>
+</div>
+
+<p class="sub">Paso A: Extracción de tabla técnica y vínculo al minuto exacto del vídeo</p>
+<div class="prompt"><div class="ph"><span>Tabla técnica con marca de tiempo (mm:ss) y exportación a PDF</span><button class="copy">Copiar</button></div>
+<pre>"Basándote en las fuentes y en las transcripciones de los vídeos de YouTube subidos, genera una tabla técnica comparativa de [los tipos de masillas empleadas en carrocería / los elementos o procesos del tema] ([Columna 1: Tipo] | [Columna 2: Soporte o aplicación] | [Columna 3: Parámetros técnicos / proporción / granulometría] | Enlace o referencia al vídeo de las fuentes donde se explica el proceso indicando el momento exacto mm:ss)."
+
+"Crea un pdf apaisado con la tabla incluyendo los enlaces a las fuentes, cuando sea necesario"</pre></div>
+
+<p class="sub">Paso B: Generación de fichas visuales (Presentación de diapositivas) desde la tabla</p>
+<div class="prompt"><div class="ph"><span>Presentación visual a partir de las filas de la tabla</span><button class="copy">Copiar</button></div>
+<pre>Quiero una presentación de diapositivas atractiva y moderna, para usar con los alumnos de [Curso / Ciclo formativo, ej.: grado medio de carrocería (jóvenes de unos 18 años)], así que busca una narrativa visual cercana y relacionada con [los talleres de reparación de automóviles / el entorno de la materia]. Debes crear, al menos, una diapositiva por cada fila de la tabla y, en cada una de ellas, debe figurar la información más importante de las tres primeras columnas (ignora la cuarta). Añade una primera diapositiva de presentación y una última para las conclusiones.</pre></div>
+
+<p class="sub">Ética docente (1): Auditoría cruzada de calidad y detección de errores con otro modelo</p>
+<div><div><p>La responsabilidad técnica y legal del material entregado en el aula es siempre del docente. Antes de distribuir un recurso generado por IA, podemos someterlo a una revisión crítica en un segundo modelo avanzado:</p></div></div>
+<div class="prompt"><div class="ph"><span>Auditoría técnica y didáctica de materiales generados</span><button class="copy">Copiar</button></div>
+<pre>Voy a proporcionar este material a un compañero de [Especialidad / Módulo, ej.: Carrocería en FP] para que lo utilice con su alumnado de [Nivel, ej.: grado medio]. Antes de dárselo quiero que lo revises buscando: 1. Contenido desactualizado; 2. Errores en el contenido; 3. Omisiones relevantes; 4. Erratas; y 5. Sugieras mejoras en el documento si consideras que incrementaría su valor didáctico</pre></div>
+<p class="sub">Ejemplos reales de auditoría cruzada: <a href="https://gemini.google.com/share/d/1ip-z3raHmyuPpY4nlanvJU5GG00FuBLN" target="_blank" rel="noopener">Revisión en Gemini</a> | <a href="https://chatgpt.com/share/6aef6db3-6b9c-83eb-9b74-8ce13ca7c0ee" target="_blank" rel="noopener">Revisión en ChatGPT</a></p>
+
+<p class="sub">Ética docente (2): Bibliografía APA, licencias Creative Commons y citación honesta en apuntes</p>
+<div class="prompt"><div class="ph"><span>1. Bibliografía APA, declaración responsable de IA y licencia CC</span><button class="copy">Copiar</button></div>
+<pre>Dame la bibliografía en formato APA de este material, incluyendo una declaración responsable del uso de IA, para que el alumnado conozca el origen de la información y les sirva de modelo para su aplicación en la documentación del proyecto intermodular. Añade una licencia para la publicación de los materiales de modo que sea obligatoria la mención a la autoría, no se pueda compartir con fines comerciales y deba usarse una licencia similar en las obras derivadas</pre></div>
+<p class="sub">Resultado de ejemplo: <a href="https://chatgpt.com/share/6aef735b-46c4-83ed-b1c5-030c27d12938" target="_blank" rel="noopener">Ver declaración APA y licencia generada en ChatGPT</a></p>
+
+<div class="prompt"><div class="ph"><span>2. Cita breve al pie de una tabla generada</span><button class="copy">Copiar</button></div>
+<pre>Voy a usar esa tabla en mis apuntes. Dame la cita correcta para incluirla como nota al pie junto a su título. No olvides mencionar la herramienta de IA empleada</pre></div>
+<div><div><p><strong>Salida obtenida (<a href="https://gemini.google.com/share/d/1EaAL2QdO_ikaIW4NFocZdnfvHw2vA4-1" target="_blank" rel="noopener">Ver en Gemini</a>):</strong></p></div>
+<blockquote>«Fuente: Elaboración propia adaptada del Manual Técnico de Preparación de Superficies y Pintura Automotriz, con revisión, corrección y ampliación didáctica asistida por inteligencia artificial (Gemini).»</blockquote>
+</div>
+
+<div class="prompt"><div class="ph"><span>3. Catalogación completa de una diapositiva usada como ilustración en apuntes</span><button class="copy">Copiar</button></div>
+<pre>Voy a usar la diapositiva [Número, ej.: 12 (última)] de la presentación "[Título de la presentación, ej.: Guía de Masillas en Carrocería 02]" en mis apuntes. Quiero que me des su texto alternativo, título y citación para añadirla como nota al pie en el título. La incluiré como una imagen más de los apuntes, así que trátala como tal, no como una diapositiva de una presentación. En la cita menciona cómo se ha generado esa imagen (indicando el uso del motor que emplees para la generación de las imágenes).</pre></div>
+<div><div><p><strong>Salida obtenida en NotebookLM:</strong></p></div>
+<blockquote>
+  <p><strong>1. Título de la imagen (epígrafe sugerido):</strong><br>
+  Figura 1. Infografía técnica: Claves de taller, normas de seguridad y buenas prácticas en la aplicación de masillas de carrocería.</p>
+  <p><strong>2. Texto alternativo (Alt Text):</strong><br>
+  ‘Infografía técnica orientada a taller automotriz que sintetiza cinco recomendaciones y normas esenciales para el trabajo con masillas’</p>
+  <p><strong>3. Citación para la nota al pie en el título:</strong><br>
+  ¹ Figura generada mediante el motor de generación visual de Gemini Notebook, a partir de los datos técnicos del Manual de Preparación de Superficies y Pintura Automotriz, directrices de fabricantes del sector (BESA, Anicla, Entaban) y procedimientos de taller (Torres_refinisher, VVG Restoration).</p>
+</blockquote>
+</div>
 </section>
 
-<section class="item"><h3>3.3. Actividad clave: corrección asistida y feedback constructivo</h3>
-<p class="warn"><b>Importante:</b> usar en local con LM Studio o subir el texto previamente anonimizado, sin nombres propios.</p>
-<div class="prompt"><div class="ph"><span>Corrector con feedback</span><button class="copy">Copiar</button></div><pre>Vas a actuar como un corrector estricto pero constructivo de [Materia / Módulo de FP]. Te voy a pasar un texto o respuesta técnica realizada por un alumno sobre [Tema].
-Evalúalo basándote estrictamente en esta rúbrica:
-- Claridad y rigor de los conceptos (0 a 4 puntos).
-- Uso preciso de la terminología técnica del sector (0 a 3 puntos).
-- Estructura, orden expositivo y ortografía (0 a 3 puntos).
 
-Tareas:
-1. Dame la calificación desglosada por cada apartado justificando brevemente el porqué de la puntuación.
-2. Señala literalmente qué fragmentos presentan errores conceptuales o de expresión.
-3. Redacta un párrafo breve de retroalimentación (feedback) en segunda persona dirigido directamente al alumno, destacando un punto fuerte de su entrega y explicándole con claridad qué 2 aspectos concretos debe mejorar para la próxima práctica.
+<section class="item"><h3>3.3. Gamificación en EVAs (CTFs y Escape Rooms) y Simuladores Interactivos</h3>
+<p class="obj"><b>Objetivo:</b> Diseñar actividades gamificadas mediante candados digitales en plataformas educativas (Classroom, Teams, Forms, Moodle) y generar aplicaciones web interactivas (simuladores técnicos y de rol) sin necesidad de programar mediante el modo <em>Canvas / Artifacts</em>.</p>
 
-Texto del alumno:
-«[Pegar aquí el texto anonimizado del alumno]»</pre></div>
+<dl>
+  <dt>1. De un CTF (<em>Capture The Flag</em>) a un Escape Room educativo:</dt>
+  <dd>Ejemplo real en funcionamiento: <a href="https://classroom.google.com/c/ODM2ODk0NDUxMDUw" target="_blank" rel="noopener">Aula de Google Classroom configurada como CTF (Sistemas Informáticos)</a>.</dd>
+  <dd>La misma mecánica de desbloqueo por códigos o «banderas» se implementa en <strong>Microsoft Teams</strong> (acceso a equipos mediante códigos de matriculación o secciones bloqueadas con validación de respuesta en <strong>Microsoft Forms / Google Forms</strong>).</dd>
+</dl>
+
+<p class="sub">Prompt para generar un Escape Room completo en Microsoft Teams + Forms</p>
+<div class="prompt"><div class="ph"><span>Generador de Escape Room con equipos de Teams y marcador en vivo</span><button class="copy">Copiar</button></div>
+<pre>Crea un pequeño escape room con una temática cercana a [los asistentes al curso / alumnado de la asignatura o módulo] usando equipos de teams. Podemos, por ejemplo y si no se te ocurre una opción mejor, crear dos equipos con matriculación automática por código. 
+Diseña 3 retos [0, 1 y 2]. La solución del reto 0 dará acceso al primer equipo. Allí se encontrarán con el reto 1, que dará acceso al segundo equipo; en él estará el reto 3 que, al resolverlo, accederán a un formulario para registrar el ganador. 
+La idea es que la temática sea muy sencilla y divertida para los participantes y que les sirva para ver las posibilidades didácticas de la herramienta. 
+Alterna preguntas fáciles de [Materia A / Cultura general ESO-Bachillerato] con otras de [Materia B / Especialidades de FP]. 
+Quiero proyectar en vivo el avance de los participantes y/o el resultado final. Dame: 
+1. La guía paso a paso para crear la actividad; 
+2. Los documentos en el formato adecuado con el enunciado de cada reto; 
+3. La guía para elaborar el formulario final; y 
+4. La guía para ver en vivo los resultados.</pre></div>
+
+<dl>
+  <dt>2. Creación de Simuladores Interactivos en 1 clic (Modo <em>Canvas</em> en Gemini/ChatGPT y <em>Artifacts</em> en Claude):</dt>
+  <dd><strong>Caso práctico 1 (Transporte y Mantenimiento de Vehículos - TMV):</strong> Simulador interactivo de tiempo y coste de carga de vehículos eléctricos según capacidad de batería, SoC, potencia del cargador y precio del kWh.</dd>
+  <dd>Enlaces a los prototipos reales generados y publicados en Google Sites:
+    <ul>
+      <li>Versión generada con <strong>Gemini Canvas</strong>: <a href="https://gemini.google.com/share/d/1gCaQM7asV-1DPAhWKs4AgiUkAHCxKe0b" target="_blank" rel="noopener">Ver chat y código en Gemini</a> | <a href="https://sites.google.com/iesjulianmarias.es/simuladordecargadevehculoselctGemini" target="_blank" rel="noopener">Probar Simulador publicado en Web (Gemini)</a></li>
+      <li>Versión generada con <strong>Claude Artifacts</strong>: <a href="https://claude.ai/artifact/2oG8hGSWzzeUwE4X7cFKAA" target="_blank" rel="noopener">Ver Artifact en Claude</a> | <a href="https://sites.google.com/iesjulianmarias.es/simulador-de-carga-de-vehculos/Claude" target="_blank" rel="noopener">Probar Simulador publicado en Web (Claude)</a></li>
+    </ul>
+  </dd>
+</dl>
+
+<p class="sub">Caso práctico 2 (IPE I y II / Administración / Todas las familias): Simulador de Entrevistas de Trabajo (Opción 1: Agente / Gem conversacional)</p>
+<p>Enlace al Gem funcional de demostración: <a href="https://gemini.google.com/gem/1MJLh9RG8hdGzrkOuShkMBEZL-HWcQaPn" target="_blank" rel="noopener">Abrir Gem «Tribunal de Selección RR.HH. + Jefe Técnico»</a></p>
+
+<div class="prompt"><div class="ph"><span>System Prompt: Tribunal Mixto de Entrevista (RR.HH. + Responsable Técnico)</span><button class="copy">Copiar</button></div>
+<pre>Actúa como un Tribunal de Selección de Personal compuesto por dos perfiles que intervienen de forma coordinada:
+1. Responsable de Recursos Humanos (evalúa competencias transversales, habilidades blandas, actitud, adaptabilidad y encaje en la empresa).
+2. Responsable Técnico del Área / Jefe de Departamento o Taller (evalúa destrezas técnicas reales, resolución de problemas operativos, manejo de herramientas/software y cumplimiento de normativa y prevención de riesgos).
+Tu objetivo es realizar una simulación de entrevista de trabajo realista y formativa para un estudiante o recién titulado, adaptándote a CUALQUIER ocupación, sector profesional o nivel educativo.
+## Reglas de oro de la simulación:
+- INTERACCIÓN PASO A PASO: Haz SIEMPRE una única pregunta cada vez y espera la respuesta del candidato antes de continuar. Nunca lances todas las preguntas de golpe.
+- REALISMO TÉCNICO: En las preguntas técnicas, no pidas definiciones teóricas de libro; plantea micro-situaciones prácticas del puesto (ej. una avería inesperada, un cliente descontento, un descuadre contable, una caída del sistema o un dilema de seguridad laboral).
+- FEEDBACK OCULTO DURANTE LA ENTREVISTA: Durante las preguntas, mantén el rol profesional de entrevistador (puedes repreguntar si el candidato da una respuesta demasiado vaga o incompleta). Guarda la evaluación pedagógica para el informe final.
+## Flujo obligatorio de la entrevista:
+### FASE 0: Configuración inicial (Tu primer mensaje)
+Saluda profesionalmente al candidato y pídele únicamente estos 3 datos para configurar el escenario:
+1. Puesto de trabajo o perfil profesional al que aspira (y sector o tipo de empresa, ej.: "Electromecánico en concesionario oficial", "Técnico en sistemas microinformáticos", "Administrativo contable en PYME", "Técnico de automatismos industriales", etc.).
+2. Nivel de estudios o experiencia (ej.: "Estudiante de 2º de Grado Medio buscando empresa para FP Dual", "Recién titulado de Grado Superior", "Titulado de Bachillerato").
+3. (Opcional) Si desea pegar el texto de una oferta de empleo real o un resumen de su CV para personalizar las preguntas.
+### FASE 1: Desarrollo de la entrevista (5 preguntas secuenciadas, de una en una)
+Una vez el candidato responda a la Fase 0, inicia la entrevista alternando los dos roles:
+- **Pregunta 1 [RR.HH. - Rompehielos y motivación]:** Presentación del perfil, por qué le interesa este sector/empresa y qué puede aportar como perfil junior o en prácticas.
+- **Pregunta 2 [Jefe Técnico - Destreza operativa y herramientas]:** Plantea una pregunta directa sobre el manejo de equipos, instrumentos, software o procedimientos habituales del puesto elegido.
+- **Pregunta 3 [RR.HH. - Situacional / Soft Skills (Método STAR)]:** Plantea un conflicto de trabajo en equipo, gestión del estrés, puntualidad, trato con clientes o reacción ante un error propio en el puesto.
+- **Pregunta 4 [Jefe Técnico - Caso práctico de diagnóstico y seguridad]:** Plantea una incidencia técnica realista en el puesto de trabajo (incluyendo un factor de Prevención de Riesgos Laborales, calidad o normativa del sector) y pregúntale qué pasos seguiría exactamente para resolverla.
+- **Pregunta 5 [Tribunal - Cierre]:** Pregunta sobre sus expectativas de aprendizaje y dale pie a que formule alguna pregunta sobre la empresa o el puesto.
+### FASE 2: Informe de Evaluación y Orientación (Al terminar la 5ª respuesta)
+Sal del rol de entrevistador y genera un informe constructivo estructurado en:
+1. **Valoración Global (Puntuación de 1 a 10):** Desglosada en *Adecuación a RR.HH. (0-5)* y *Solvencia Técnica (0-5)*.
+2. **Análisis pregunta por pregunta (Tabla):**
+   - Lo que has hecho bien (fortalezas detectadas).
+   - Qué ha faltado mencionar (terminología técnica, protocolos de seguridad o actitud).
+   - *Ejemplo de respuesta de 10:* Cómo habría respondido un candidato excelente a esa misma pregunta.
+3. **Tres consejos clave de empleabilidad:** Recomendaciones concretas para defender mejor su perfil en una entrevista real de ese sector.</pre></div>
+
+<p class="sub">Opción 2: Creación de una «Web App» del Simulador de Entrevistas en Modo Lienzo (<em>Canvas / Artifacts</em>)</p>
+<div class="prompt"><div class="ph"><span>Generador de Web App HTML: Simulador de Entrevistas Técnicas y RR.HH.</span><button class="copy">Copiar</button></div>
+<pre>Actúa como docente de Itinerario Personal para la Empleabilidad (IPE I y II) y desarrollador web educativo.
+Usa el modo Lienzo (Canvas / Artifacts) para crear una aplicación interactiva en un único archivo HTML autocontenido titulada «Simulador de Entrevistas Técnicas y de RR.HH.».
+Requisitos funcionales y de diseño:
+1. Pantalla de configuración donde el alumno pueda elegir un sector rápido (Informática, Electricidad/Electrónica, Automoción, Administración/Gestión, Sanidad/Ciencias, Hostelería/Comercio) o escribir libremente cualquier puesto de trabajo, y seleccionar el nivel (FP Grado Básico, Grado Medio, Grado Superior o Bachillerato).
+2. Un generador dinámico de casos de entrevista que combine en tarjetas interactivas:
+   - 2 preguntas de Recursos Humanos (motivación y resolución de conflictos mediante el método STAR: Situación, Tarea, Acción, Resultado).
+   - 2 retos técnicos prácticos adaptados al puesto seleccionado (diagnóstico de un problema real del puesto y aplicación de medidas de prevención de riesgos laborales).
+3. Un cuadro de texto en cada pregunta para que el alumno redacte o ensaye su respuesta, un temporizador opcional de 2 minutos por respuesta (para entrenar la agilidad verbal) y un botón desplegable de «Ver pauta de evaluación y pistas clave del tribunal» que le muestre qué vocabulario técnico y qué actitud buscan los entrevistadores en esa pregunta concreta.
+4. Botón final para exportar o imprimir su hoja de preparación de entrevista completada.</pre></div>
 </section>
+
+
+<section class="item"><h3>3.4. Automatización de Tests y Bancos de Preguntas (Microsoft Forms y Moodle GIFT)</h3>
+<p class="obj"><b>Objetivo:</b> Generar baterías masivas de preguntas de aplicación práctica a partir de nuestros apuntes en formatos de importación directa en un clic (<em>Aiken / .docx</em> para Microsoft Forms y <em>GIFT</em> con retroalimentación automática para el Aula Virtual Moodle).</p>
+
+<div class="prompt"><div class="ph"><span>Generador dual de bancos de preguntas (MS Forms + Moodle GIFT)</span><button class="copy">Copiar</button></div>
+<pre>Actúa como docente especialista en [Asignatura / Módulo, ej.: Redes de ordenadores]. A partir de las fuentes, genera un banco de [Número, ej.: 20 / 100] preguntas de evaluación tipo test con 4 opciones de respuesta (solo una correcta) que evalúen comprensión y aplicación práctica, no solo memoria literal.
+Entrégame el resultado en DOS bloques separados listos para copiar y pegar:
+BLOQUE 1 (Formato para importar en Microsoft Forms desde un fichero .docx AIKEN ): Preguntas numeradas con opciones A), B), C), D) y la línea "ANSWER: [Letra]" justo debajo de cada una. Cada bloque ‘pregunta’, opción A, opción B, opción C, opción D y respuesta usando una nueva línea para cada elemento del bloque. Una línea en blanco entre bloques siguiendo este modelo:
+‘’’
+1. Pregunta 1
+	A. Opción A
+	B. Opción B
+	C. Opción C
+	D. Opción D
+ANSWER: Letra de la opción correcta
+
+2. Pregunta 2
+	A. Opción A ….
+‘’’
+BLOQUE 2 (Formato GIFT para importar en Moodle / Aula Virtual de EducaCyL): Con la sintaxis exacta de llaves { =Respuesta correcta #Breve retroalimentación positiva ~Respuesta incorrecta 1 #Explicación de por qué es errónea ... } para que el alumno reciba feedback automático al terminar el test.</pre></div>
+</section>
+
+
+<section class="item"><h3>3.5. Presentación de apoyo de la Sesión 3 (Generada con Gemini Notebook)</h3>
+<p class="obj"><b>Objetivo:</b> Mostrar cómo estructurar el guion de una sesión formativa en NotebookLM controlando la narrativa visual y el estilo editorial de las diapositivas.</p>
+
+<p class="sub">Enlace a la presentación de la sesión: <a href="[PEGAR_AQUI_ENLACE_A_LA_PRESENTACION_DE_LA_SESION_3]" target="_blank" rel="noopener">Ver presentación «Sesión 3: El Escape Room de la Evaluación y los Simuladores»</a></p>
+
+<p class="sub">Prompt utilizado para configurar el aspecto visual de la presentación en Gemini Notebook</p>
+<div class="prompt"><div class="ph"><span>Prompt de estilo visual (Escape Room Misterio Editorial / Halloween sutil)</span><button class="copy">Copiar</button></div>
+<pre>Genera una presentación de diapositivas en español siguiendo estrictamente el orden de las 21 diapositivas de la fuente «Esquema de Presentación Sesión 3».
+Directrices de diseño y estilo visual:
+1. Temática narrativa: Ambienta visualmente la presentación como un «Escape Room de misterio clásico / noche de Halloween elegante» (biblioteca antigua, taller en penumbra con lámparas cálidas, candados de bronce, expedientes secretos y planos técnicos en pergamino).
+2. Estética editorial (evitar apariencia de IA): Utiliza un diseño gráfico sobrio, limpio y de aspecto humano/editorial (ilustración plana vectorial de trazo fino o grabado técnico tipo blueprint), con paleta de colores gris carbón (#1E1E24), crema pergamino (#F4F1EA), naranja calabaza tostado (#D95D39) y verde salvia oscuro (#2D6A4F). Evita por completo imágenes fotorrealistas recargadas, brillos de neón cibernéticos, robots o clichés infantiles de Halloween.
+3. Estructura: Respeta una diapositiva independiente para cada bloque y cada PROMPT del guion, e incluye íntegramente como última diapositiva (Diapositiva 21) el bloque de «Declaración de uso responsable de IA, Autoría y Licencia Creative Commons CC BY 4.0».</pre></div>
+</section>
+
 </div>
 
 
