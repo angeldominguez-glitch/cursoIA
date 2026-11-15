@@ -25,7 +25,7 @@ header p{max-width:60ch;color:var(--muted);margin:0}
 .rules ol{margin:0;padding-left:20px;color:var(--muted);font-size:.95rem}
 .rules li{margin:3px 0}.rules strong{color:var(--ink)}
 .tabs{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0;border-bottom:1px solid var(--line)}
-.tablist{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.tablist{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .tab{--a:#12915B;font:inherit;text-align:left;cursor:pointer;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--a);border-radius:12px;padding:10px 14px;line-height:1.3;transition:background .15s,border-color .15s}
 .tab b{display:block;font:700 1rem var(--head)}
 .tab span{font-size:.82rem;color:var(--muted)}
@@ -74,6 +74,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);f
 <button class="tab" role="tab" id="t2" aria-controls="s2" style="--a:#2563EB"><b>Sesión 2</b><span>Notebooks, agentes y accesibilidad</span></button>
 <button class="tab" role="tab" id="t3" aria-controls="s3" style="--a:#E8710A"><b>Sesión 3</b><span>Evaluación, simuladores y rúbricas</span></button>
 <button class="tab" role="tab" id="t4" aria-controls="s4" style="--a:#D1344B"><b>Sesión 4</b><span>OCR, evaluación 360º, voz y seguridad</span></button>
+<button class="tab" role="tab" id="t5" aria-controls="s5" style="--a:#7C3AED"><b>Extras</b><span>Asistentes, herramientas y guías</span></button>
 </div></div></nav>
 
 <main class="wrap">
@@ -1170,11 +1171,150 @@ Directrices de diseño y estilo visual («Editorial Tech &amp; Data Keynote»):
 1. Estética general: Diseño de alta consultoría tecnológica e innovación educativa, limpio, moderno, luminoso y de aspecto 100 % editorial humano (evitando clichés de IA como robots, cerebros brillantes o neones cibernéticos).
 2. Paleta cromática: Fondo marfil técnico / gris perla muy suave (#F8FAFC) con tarjetas de contraste en azul noche profundo (#0F172A) para los bloques de prompts y código; acentos en azul cobalto (#2563EB) para datos y evaluación, verde esmeralda (#059669) para flujos verificados y rojo carmesí (#D1344B) para alertas de seguridad y Prompt Injection.
 3. Composición y gráficos: Maquetación en cuadrícula suiza (Bento Grid), tipografía Sans-Serif geométrica de alta legibilidad para titulares combinada con fuente monoespaciada para prompts y comandos, e infografías vectoriales de trazo limpio para diagramas de flujo, distribuciones de aula y gráficos estadísticos.</pre></div>
+
+<p class="sub">Texto pegado como fuente en Gemini Notebook para la creación de la presentación</p>
+<div class="prompt"><div class="ph"><span>Guion de la presentación</span><button class="copy">Copiar</button></div>
+<pre># ESQUEMA MAESTRO DE DIAPOSITIVAS – SESIÓN 4: «DEL RESCATE DOCUMENTAL A LA EVALUACIÓN 360º, LA SEGURIDAD Y LA INTEGRIDAD ACADÉMICA»
+**Curso:** IA Práctica para docentes de secundaria y FP: de la burocracia al aula
+**Fecha:** Lunes 16 de noviembre | 14:00 – 16:00 h
+
+---
+
+### DIAPOSITIVA 1: Portada de la Sesión 4 (Cierre del Curso)
+* **Título principal:** SESIÓN 4: Evaluación 360º, Seguridad RGPD, Voz e Integridad Académica.
+* **Subtítulo:** Del rescate de documentos por OCR y los bancos de exámenes masivos al seguimiento del Proyecto Intermodular, el análisis estadístico y la detección de trampas con IA.
+* **Mapa de los 4 Bloques de la sesión:**
+  1. **Bloque 1:** Del papel escaneado al Markdown limpio (OCR) e importación masiva de tests (Moodle, MS Forms y Google Forms).
+  2. **Bloque 2:** Evaluación en 3 niveles: Tareas con rúbricas importables, Proyecto Intermodular y Análisis estadístico grupal.
+  3. **Bloque 3:** Seguridad RGPD profunda (SharePoint/Drive), IA Local (LM Studio) y Dictado inteligente por voz.
+  4. **Bloque 4:** Integridad académica: *Prompt Injection* bidireccional, la verdad sobre los detectores de IA y el Marco MIAE/AIAS.
+
+---
+
+### DIAPOSITIVA 2: Apertura del Bloque 1 — Rescate Documental y Bancos Masivos de Evaluación
+* **Título:** BLOQUE 1: Del Papel Antiguo al Markdown Limpio y la Automatización de Tests.
+* **Subtítulo:** Dos flujos técnicos de alta productividad para transformar apuntes físicos deteriorados en fuentes óptimas y generar exámenes multiformato sin copiar preguntas a mano.
+
+---
+
+### DIAPOSITIVA 3: El Flujo de Supervivencia OCR (Del peor escaneado posible a Markdown `.md`)
+* **Título:** ¿Cómo rescatar manuales de los años 90 o fotocopias deterioradas sin que la IA los bloquee por copyright?
+* **El problema real:** Si subimos un PDF escaneado de un libro directamente al chat y le pedimos transcribirlo, la IA suele negarse por filtros de *copyright*.
+* **El flujo infalible en 3 pasos (Menor consumo de tokens y máxima fidelidad):**
+  1. **Captura y OCR en Google Drive:** Subimos el PDF escaneado a Drive y lo abrimos con **Google Docs** (Drive aplica su propio OCR extrayendo el texto en bruto).
+  2. **Conversión a Markdown:** En Google Docs pulsamos en *Archivo $\rightarrow$ Descargar $\rightarrow$ Markdown (`.md`)* (o lo editamos en *EdiMarkdown*).
+  3. **Reconstrucción quirúrgica con IA (Temperatura baja):** Pasamos ese archivo `.md` desordenado y con guiones rotos por nuestro Prompt Corrector.
+
+---
+
+[...]
+
+---
+
+### DIAPOSITIVA 24: La Gran Pregunta del Claustro — Radiografía Real de los Detectores de IA
+* **Título:** ¿Existen detectores de IA 100% fiables en Universidades, Moodle, Classroom o Teams?
+* **Tabla comparativa de herramientas y fiabilidad:**
+  1. **Universitarias / Institucionales (Integradas por LTI en Moodle, Teams y Classroom):** *Turnitin (AI Writing Detection)*, *Compilatio Magister+*, *CopyLeaks*, *Ouriginal*. **Realidad:** Licencias muy caras (no incluidas en el Moodle estándar de EducaCyL) y la propia CRUE desaconseja sancionar solo con su porcentaje por **falsos positivos** y facilidad de evasión.
+  2. **Nativas en Google Classroom / Docs y MS Teams:** El verdadero detector gratuito y con validez objetiva es el **«Historial de versiones»** de Google Docs / Word Online (y la extensión *Draftback* / *Revision History*), que muestra en vídeo si el alumno redactó paso a paso o pegó 3 páginas en un segundo.
+  3. **Detectores Web Gratuitos de Texto (*GPTZero*, *ZeroGPT*, *QuillBot*):** Fiabilidad baja y alto riesgo de falsos positivos en textos formales (nunca usarlos como prueba única en una reclamación).
+  4. **Marca de Agua Criptográfica en Multimedia (*SynthID* y *C2PA*):** Altísima fiabilidad para detectar imágenes, audio y vídeo generados por IA, pero poco eficaz en texto escrito si el alumno edita palabras.
+
+---
+
+### DIAPOSITIVA 25: El Cambio de Paradigma — Escala AIAS / Marco MIAE y Declaración Responsable
+* **Título:** De perseguir fantasmas a fijar las reglas del juego: Escala AIAS, Marco MIAE v2.1 y GAIDeT.
+* **Las 3 patas de la evaluación auténtica en la era de la IA:**
+  1. **Definir el nivel de IA permitido en cada tarea (Escala AIAS / Marco MIAE v2.1):** Desde el *Nivel 1 (Sin IA)* hasta el *Nivel 5 (Exploración libre con IA)*.
+  2. **Exigir la Declaración Responsable de Uso (Plantilla del centro / *GAIDeT*):** No se penaliza usar la IA cuando está autorizada; se penaliza **no declararla** o inventar referencias.
+  3. **Evaluar el proceso y la defensa oral:** Combinar el historial de versiones del documento con 2 minutos de preguntas orales generadas sobre su propio trabajo (Prompt 2.3C).
+
+---
+
+### DIAPOSITIVA 26: Epílogo del Curso — Declaración de Uso de IA, Autoría y Licencia Abierta
+* **Título:** Expediente de Transparencia: Uso Honesto de la IA y Licencia de los Materiales.
+* **1. Declaración responsable de uso de Inteligencia Artificial:**
+  * **Diseño pedagógico, ingeniería de prompts y pruebas de seguridad:** Desarrollados y validados por el docente formador con asistencia analítica y estructuración de **Google Gemini**, **Claude (Anthropic)**, **ChatGPT (OpenAI)** y **Microsoft Copilot**.
+  * **Generación de la presentación:** Maquetada mediante el motor visual de **Gemini Notebook (NotebookLM)** a partir del guion técnico elaborado para la Sesión 4.
+* **2. Autoría:**
+  * Material elaborado por **Ángel Tomás Domínguez Pequeño** para el curso *«IA Práctica para docentes de secundaria y FP: de la burocracia al aula»* (Valladolid, noviembre de 2026).
+* **3. Licencia Abierta Creative Commons (CC BY 4.0):**
+  * Esta presentación, el guion de la sesión y la colección de *prompts* se distribuyen bajo licencia **Creative Commons Reconocimiento 4.0 Internacional (CC BY 4.0)**: se permite compartir, copiar y adaptar libremente para cualquier fin educativo o profesional citando la autoría original.
+</pre></div>
+
+
 </section>
 
 </div>
 
 
+
+<div class="panel" role="tabpanel" id="s5" aria-labelledby="t5" style="--a:#7C3AED" hidden>
+<h2>La Mochila Digital Docente: Asistentes listos para usar, herramientas y guías de referencia</h2>
+
+<p class="lead">Recopilación ordenada y permanente de los asistentes, cuadernos, Skills, herramientas gratuitas o con ventajas educativas (<code>@educa.jcyl.es</code>) y los marcos normativos oficiales para seguir aplicando la IA con rigor en el centro.</p>
+
+<section class="item"><h3>5.1. Asistentes, Cuadernos y Skills del curso («Llave en mano»)</h3>
+<p class="obj"><b>Objetivo:</b> Acceder directamente o clonar en nuestras propias cuentas los asistentes, Gems, Agentes de Copilot y Cuadernos desarrollados para el curso.</p>
+
+<dl>
+  <dt>1. Simulador de Entrevistas Técnicas y de RR.HH. (IPE I y II / FP y Bachillerato):</dt>
+  <dd><a href="https://gemini.google.com/gem/1MJLh9RG8hdGzrkOuShkMBEZL-HWcQaPn" target="_blank" rel="noopener">Abrir Gem «Tribunal Mixto de Selección (RR.HH. + Jefe Técnico)» en Gemini</a>. Permite al alumnado entrenar entrevistas reales combinando competencias transversales (método STAR) y resolución de casos operativos y de prevención de riesgos de cualquier perfil profesional.</dd>
+
+  <dt>2. Secretario de Dictado Docente (Transformador de voz a documentos formales):</dt>
+  <dd><a href="https://m365.cloud.microsoft/chat/?titleId=T_3b8d7c92-5ecf-90c9-ed75-a569b03d856a" target="_blank" rel="noopener">Abrir Agente en Microsoft 365 Copilot</a> | <a href="https://drive.google.com/file/d/1SsH-P1Sv_j9XuRFAtCU4ZZTIjrUEPALn/view" target="_blank" rel="noopener">Descargar paquete de Skill para Gemini</a> | <a href="https://gemini.google.com/share/d/152RuzT7wDfyM80QrKUnRVtLbA_6zC2Ho" target="_blank" rel="noopener">Ver ejemplo de ejecución</a>. Convierte audios o dictados con muletillas y rectificaciones en correos (a empresas de FFE, familias o compañeros), actas, enunciados de prácticas o apuntes limpios imitando nuestro propio estilo.</dd>
+
+  <dt>3. Asesor de Inspección Educativa y Normativa de Centro (Castilla y León):</dt>
+  <dd><a href="[PEGAR_AQUI_ENLACE_AL_CUADERNO_O_AGENTE_DE_INSPECCION]" target="_blank" rel="noopener">Acceder al Cuaderno / Agente «Simulador de Inspección Educativa»</a>. Entorno configurado con normativa autonómica de evaluación, convivencia, programación por RA y LOMLOE para auditar programaciones didácticas, actas o respuestas a reclamaciones de calificaciones.</dd>
+
+  <dt>4. Cuaderno de Uso Ético, Seguro y Normativo de la IA en Educación:</dt>
+  <dd><a href="[PEGAR_AQUI_ENLACE_AL_CUADERNO_DE_USO_ETICO]" target="_blank" rel="noopener">Acceder al Cuaderno «Asesor de Ética, RGPD y Marco MIAE/AIAS»</a>. Alimentado con las guías oficiales del INTEF, la AEPD y el marco MIAE para consultar al instante dudas sobre privacidad o qué nivel de IA permitir en cada tarea.</dd>
+</dl>
+</section>
+
+
+<section class="item"><h3>5.2. Caja de herramientas recomendadas y flujos de trabajo avanzados</h3>
+<p class="obj"><b>Objetivo:</b> Disponer de utilidades contrastadas para edición visual con ventajas para cuentas <code>@educa.jcyl.es</code>, búsqueda multilingüe profunda, preparación de fuentes en Markdown y autoría académica.</p>
+
+<dl>
+  <dt>1. Edición visual, esquemas y presentaciones con ventajas para docentes (<code>@educa.jcyl.es</code>):</dt>
+  <dd><strong><a href="https://pixlr.com/es/" target="_blank" rel="noopener">Pixlr</a>:</strong> Editor de imagen y diseño asistido por IA que ofrece acceso a cuenta Pro y créditos gratuitos registrándose en su plan educativo con el correo institucional <code>@educa.jcyl.es</code>.</dd>
+  <dd><strong><a href="https://www.canva.com/es_es/educacion/" target="_blank" rel="noopener">Canva para Educación</a>:</strong> Validando nuestra cuenta docente <code>@educa.jcyl.es</code> desbloquea de forma 100 % gratuita las funciones Pro y el Estudio Mágico de IA (edición de imágenes, traducción de láminas técnicas de taller e infografías).</dd>
+  <dd><strong><a href="https://www.napkin.ai/" target="_blank" rel="noopener">Napkin AI</a>:</strong> Transforma en un clic cualquier párrafo de nuestros apuntes en diagramas de flujo, mapas visuales y esquemas vectoriales editables (cambiando iconos, colores y textos) y descargables en PNG o PDF sin apariencia artificial.</dd>
+  <dd><strong><a href="https://marp.app/" target="_blank" rel="noopener">Marp</a>:</strong> Ecosistema gratuito de código abierto que convierte cualquier archivo de texto en Markdown (<code>.md</code>) directamente en presentaciones de diapositivas limpias y editables (HTML, PDF o PowerPoint <code>.pptx</code>).</dd>
+
+  <dt>2. Búsqueda multilingüe profunda, transcripción y preparación de fuentes en Markdown:</dt>
+  <dd><strong><a href="https://felo.ai/search" target="_blank" rel="noopener">Felo Search</a>:</strong> Mucho más que un buscador: permite formular consultas técnicas y recibir respuestas estructuradas recopiladas de fuentes en múltiples idiomas (ruso, alemán, inglés, japonés...). Escanea tanto bases de datos académicas como plataformas técnicas (Reddit, X), localiza directamente documentos PDF, Word, Excel o PowerPoint y muestra todas las fuentes traducidas y verificables en un panel lateral.</dd>
+  <dd><strong><a href="https://edimarkdown.github.io/" target="_blank" rel="noopener">EdiMarkdown</a>:</strong> Editor ligero en línea para limpiar, dar formato y previsualizar en tiempo real los archivos Markdown (<code>.md</code>) de nuestras fuentes en Notebooks y redactar <em>System Prompts</em> complejos.</dd>
+  <dd><strong><a href="https://jina.ai/reader/" target="_blank" rel="noopener">Jina Reader (<code>r.jina.ai/</code>)</a>:</strong> Truco instantáneo sin registro para convertir cualquier página web o normativa online en Markdown limpio: basta con escribir <code>https://r.jina.ai/</code> justo delante de cualquier dirección web (ej. <code>https://r.jina.ai/https://www.educa.jcyl.es/...</code>) para obtener el texto estructurado sin menús ni publicidad.</dd>
+  <dd><strong><a href="https://turboscribe.ai/es/" target="_blank" rel="noopener">TurboScribe</a> (y grabador de Word Online / OneNote EducaCyL):</strong> Extracción de transcripciones con marcas de tiempo a partir de archivos de audio o vídeos técnicos locales (<code>.mp4</code>, <code>.mp3</code>) que no están en YouTube para incorporarlos como fuentes en nuestros cuadernos.</dd>
+
+  <dt>3. Automatización avanzada, autoría y desarrollo de simuladores:</dt>
+  <dd><strong><a href="https://www.youtube.com/watch?v=A3o6PtnPn1M" target="_blank" rel="noopener">Videotutorial: Paso de Gems a Skills</a>:</strong> Guía práctica para evolucionar nuestros asistentes conversacionales hacia habilidades modulares reutilizables.</dd>
+  <dd><strong><a href="https://www.briskteaching.com/" target="_blank" rel="noopener">Brisk Teaching (Extensión para Chrome / Edge)</a>:</strong> Incluye la función gratuita <em>Inspect Writing</em> para reproducir como un vídeo el proceso de escritura e historial de pegado de un alumno en Google Docs, además de generar feedback directo sobre el documento.</dd>
+  <dd><strong><a href="https://vibe-coding-educativo.github.io/vibe-responsable/es/" target="_blank" rel="noopener">Guía de Vibe Coding Educativo</a>:</strong> Manual de buenas prácticas para diseñar aplicaciones interactivas y simuladores de aula con IA (modo <em>Canvas / Artifacts</em>) de forma segura, pedagógica y mantenible.</dd>
+  <dd><strong><a href="https://github.com/serenakeyitan/awesome-notebookLM-prompts" target="_blank" rel="noopener">Prompts para presentaciones impactantes en NotebookLM</a>:</strong> Repositorio de estilos visuales para personalizar las presentaciones de Gemini Notebook (recordando acompañarlos siempre del guion detallado diapositiva a diapositiva).</dd>
+</dl>
+</section>
+
+
+<section class="item"><h3>5.3. Guías oficiales y documentos de referencia normativa y pedagógica</h3>
+<p class="obj"><b>Objetivo:</b> Consultar la documentación oficial europea, nacional y universitaria sobre privacidad, competencias en IA y marcos de evaluación ética.</p>
+
+<dl>
+  <dt>1. Marco legal europeo y protección de datos (RGPD):</dt>
+  <dd><strong><a href="https://artificialintelligenceact.eu/es/ai-act-explorer/" target="_blank" rel="noopener">Reglamento Europeo de Inteligencia Artificial (AI Act Explorer)</a>:</strong> Explorador interactivo oficial en español de la normativa europea de IA.</dd>
+  <dd><strong><a href="https://op.europa.eu/es/publication-detail/-/publication/d81a0d54-5348-11ed-92ed-01aa75ed71a1" target="_blank" rel="noopener">Directrices éticas sobre el uso de la IA y los datos en la educación y formación (Comisión Europea)</a>:</strong> Guía oficial de la Unión Europea para educadores y centros escolares.</dd>
+  <dd><strong><a href="https://www.aepd.es/guias/orientaciones-ia-agentica.pdf" target="_blank" rel="noopener">IA Agéntica y protección de datos (AEPD - PDF)</a>:</strong> Orientaciones de la Agencia Española de Protección de Datos sobre el despliegue seguro de agentes, permisos de acceso y minimización de datos.</dd>
+
+  <dt>2. Guías didácticas, alfabetización del alumnado y evaluación (MIAE / AIAS):</dt>
+  <dd><strong><a href="https://intef.es/wp-content/uploads/2026/09/ACTUALIZACION-GUIA-DE-LA-IA-DEF-1-SEPT-2026-Publicable-v5-2.pdf" target="_blank" rel="noopener">Guía sobre el uso de la IA en el ámbito educativo (INTEF, septiembre 2026 - PDF)</a>:</strong> Documento actualizado del Ministerio de Educación, Formación Profesional y Deportes.</dd>
+  <dd><strong><a href="https://ailiteracyframework.org/pdfs/framework_pdf/AILF_es.pdf" target="_blank" rel="noopener">Cómo preparar al alumnado para la era de la IA (AILF - PDF)</a>:</strong> Marco internacional de competencias de alfabetización en IA para Educación Primaria y Secundaria.</dd>
+  <dd><strong><a href="https://educacion.bilateria.org/marco-para-la-integracion-de-la-ia-generativa-en-las-tareas-educativas-miae-v-2-1" target="_blank" rel="noopener">Marco para la integración de la IA generativa en las tareas educativas (MIAE v2.1)</a>:</strong> Basado en la escala de evaluación <a href="https://ricardolucas.substack.com/p/el-marco-aias-una-herramienta-estrategica" target="_blank" rel="noopener">AIAS (AI Assessment Scale)</a> para definir los 5 niveles de uso permitido en las entregas.</dd>
+  <dd><strong><a href="https://dugi-doc.udg.edu/bitstream/handle/10256/29419/Codi_bones_practiques_IAG_2026.pdf" target="_blank" rel="noopener">Código de buenas prácticas de IA generativa educativa (Universitat de Girona, 2026 - PDF)</a>:</strong> Documento de referencia sobre integridad académica y docencia (en catalán).</dd>
+</dl>
+</section>
+
+</div>
 
 
 
@@ -1191,11 +1331,11 @@ function show(i,focus){
 tabs.forEach((t,i)=>{
   t.addEventListener('click',()=>{show(i);window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'})});
   t.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight')show((i+1)%4,true);
-    if(e.key==='ArrowLeft')show((i+3)%4,true);
+    if(e.key==='ArrowRight')show((i+1)%5,true);
+    if(e.key==='ArrowLeft')show((i+4)%5,true);
   });
 });
-const start=parseInt((location.hash.match(/s([1-4])/)||[0,1])[1])-1;
+const start=parseInt((location.hash.match(/s([1-5])/)||[0,1])[1])-1;
 show(start);
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
   const txt=b.closest('.prompt').querySelector('pre').innerText;
